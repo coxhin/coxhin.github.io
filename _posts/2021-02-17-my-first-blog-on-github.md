@@ -25,4 +25,6 @@ Jekyll bastard!
 <p>with a long period of being colony</p>
 <p>India has already been a **** country</p>
 
+[LATEX support](https://stackoverflow.com/questions/26275645/how-to-support-latex-in-github-pages )
+
 

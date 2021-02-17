@@ -1,7 +1,8 @@
 ---
 layout: page
 title: Shit
-permalink: /Sht/
+permalink: /Shtt/
 ---
 
-You do really like shit, or why you click in? lol
+You do really like shit, or why you click in? lol \\
+Just shit somewhere else kid.

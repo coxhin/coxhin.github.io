@@ -57,7 +57,7 @@ Junjielong Xu is a Ph.D. candidate of Computer Science in the [School of Data Sc
 
   <span style="font-size:13px;"> <strong><em>Junjielong Xu</em></strong>, Ruichun Yang, Yintong Huo, Chengyu Zhang, Pinjia He.</span>
 
-  <span style="font-size:14px;"> *International Conference on Software Engineering, Lisbon, April 2024. </span>
+  <span style="font-size:14px;"> *International Conference on Software Engineering*, Lisbon, April 2024. </span>
 
   [[paper](https://dl.acm.org/doi/abs/10.1145/3597503.3639155)]
   [[code](https://github.com/logpai/logparser)]

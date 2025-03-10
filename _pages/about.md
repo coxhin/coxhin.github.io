@@ -31,7 +31,7 @@ Junjielong Xu is a Ph.D. candidate of Computer Science in the [School of Data Sc
 - *2025.01*: &nbsp;🎉🎉 I served as Program Committee for **FSE'25** industry track.
 - *2025.01*: &nbsp;🎉🎉 One first-authored paper was accepted by **ICLR'25**.
 - *2024.10*: &nbsp;🎉🎉 One first-authored paper was accepted by **ICSE'25**.
-- *2025.03*: &nbsp;🎉🎉 I served as Shadow Program Committee for **ICSE'25**.
+- *2024.03*: &nbsp;🎉🎉 I served as Shadow Program Committee for **ICSE'25**.
 
 # 📝 Publications 
 

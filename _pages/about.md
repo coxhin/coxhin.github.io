@@ -23,6 +23,8 @@ Junjielong Xu is a Ph.D. candidate of Computer Science in the [School of Data Sc
 
 🔑 His objective is to provide non-trivial insights into AI models to address impactful challenges in real-world SE scenarios. He is trying hard to work toward this and hopes to conduct interesting yet meaningful research one day. 🫨
 
+😊 He is currently looking for *visiting* or *internship* opportunities. Feel free to reach out if you are interested and would like to discuss ideas or collaborate on research project.
+
 ***P.S.*** My name "Junjielong Xu" is written as "徐俊杰龙" in Chinese, and is pronounced like "Joon-jyeh-long Shoo."
 
 # 🔥 News

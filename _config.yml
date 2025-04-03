@@ -6,9 +6,9 @@
 # `jekyll serve`. If you change this file, please restart the server process.
 
 # Site Settings
-title                    : "Junjielong Xu"
-description              : "<i>\"Magna est inertia\"</i>"
-repository               : "Siyuexi.github.io"
+title                    : "Haowen Yang"
+description              : "<i>\"Life can only be understood backwards; but it must be lived forwards.\"</i>"
+repository               : "csryoung.github.io"
 google_scholar_stats_use_cdn : true
 
 # google analytics
@@ -21,14 +21,14 @@ baidu_site_verification  :  # get baidu_site_verification from https://ziyuan.ba
 
 # Site Author
 author:
-  name             : "Junjielong Xu"
-  avatar           : "images/myviewhd.jpg"
-  bio              : "Ph.D. candidate at CUHK-SZ"
-  location         : "Shenzhen, China"
+  name             : "Haowen Yang"
+  avatar           : "images/profile_pic.png"
+  bio              : "Ph.D. student at HKUSTgz"
+  location         : "Guangzhou, China"
   employer         :
   pubmed           : 
-  googlescholar    : "https://scholar.google.com/citations?user=e-zP90wAAAAJ&hl=en"
-  email            : "siyuexi@foxmail.com"
+  googlescholar    : # "https://scholar.google.com/citations?user=e-zP90wAAAAJ&hl=en"
+  email            : "hyang464@connect.hkust-gz.edu.cn"
   researchgate     :  # e.g., "https://www.researchgate.net/profile/yourprofile"
   uri              :
   bitbucket        :
@@ -37,7 +37,7 @@ author:
   flickr           :
   facebook         :
   foursquare       :
-  github           : "Siyuexi"
+  github           : "csryoung"
   google_plus      :
   keybase          :
   instagram        :

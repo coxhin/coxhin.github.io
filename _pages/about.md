@@ -64,7 +64,7 @@ Collaborations and discussions in these domains are welcomed.
 - Reviewer, [TOSEM](https://dl.acm.org/journal/tosem)
 
 *Conference*
-- External Reviewer, ICSE 25, FSE 24, ISSRE 24
+- External Reviewer, ICSE 25, ASE 25, ISSRE 24
 
 # 💻 Internships
 

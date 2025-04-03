@@ -17,87 +17,59 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
-Junjielong Xu is a Ph.D. candidate of Computer Science in the [School of Data Science](https://sds.cuhk.edu.cn/en) at [The Chinese University of Hong Kong, Shenzhen](https://www.cuhk.edu.cn/en) (CUHK-SZ). His supervisor is [Prof. Pinjia He](https://pinjiahe.github.io). Before joining CUHK-SZ, he received his BEng degree from the [School of Electronic Information and Communication](https://eic.hust.edu.cn/) at [Huazhong University of Science and Technology](https://hust.edu.cn/) (HUST) in 2022.
+Haowen Yang is a first year PhD student from [Data Science and Analytics Thrust](https://dsa.hkust-gz.edu.cn/), [Information Hub](https://www.hkust-gz.edu.cn/academics/hubs-and-thrust-areas/information-hub/), [The Hong Kong University of Science and Technology (Guangzhou)](https://www.hkust-gz.edu.cn/).
+He is fortunate to be advised by [Prof. Zishuo Ding](https://personal.hkust-gz.edu.cn/ding/). 
+Previously, he earned my MPhil from CUHK-Shenzhen where he was fortunate to be advised by [Prof. Pinjia He](https://pinjiahe.github.io/) at the [School of Data Science](https://cs.pku.edu.cn/). Before joining CUHK-Shenzhen, received his BEng degree from the [College of Automation Engineering](https://cae.nuaa.edu.cn/zdh_en/) at [Nanjing University of Aeronautics and Astronatics (NUAA)](https://www.nuaa.edu.cn/) in 2022.
 
-🔎 His research focuses on LLM-based DevOps automation for enhancing reliability of code and services, particularly in the areas of (1) logging and root cause analysis (RCA) (2) debugging and automated program repair (APR). He is also interested in recent LLM research topics such as scalable oversight and test-time scaling.
+🔎 His current research interest lies in LLM4SE, particularly LLMs for code efficiency, and OSS. 
+Collaborations and discussions in these domains are welcomed.
 
-🔑 His objective is to provide non-trivial insights into AI models to address impactful challenges in real-world SE scenarios. He is trying hard to work toward this and hopes to conduct interesting yet meaningful research one day. 🫨
-
-😊 He is currently looking for *visiting* or *internship* opportunities. Feel free to reach out if you are interested and would like to discuss ideas or collaborate on research project.
 
 # 🔥 News
 
-- *2025.03*: &nbsp;🎉🎉 I served as Art Design Chair for **FSE'26**. 
-- *2025.01*: &nbsp;🎉🎉 I served as Program Committee for **FSE'25** industry track.
-- *2025.01*: &nbsp;🎉🎉 One first-authored paper was accepted by **ICLR'25**.
-- *2024.10*: &nbsp;🎉🎉 One first-authored paper was accepted by **ICSE'25**.
-- *2024.03*: &nbsp;🎉🎉 I served as Shadow Program Committee for **ICSE'25**.
+- *2025.03*: &nbsp;🎉🎉 One first-authored paper was accepted by **FSE'25**.
+- *2024.09*: &nbsp;🎉🎉 I served as a Reviewer for **TOSEM'25**.
+- *2024.08*: &nbsp;🎉🎉 Our paper was accepted by **ICSE'25**.
 
 # 📝 Publications 
 
-- &nbsp; <span class="badge">ICLR'25</span> &nbsp;**OpenRCA: Can Large Language Models Locate the Root Cause of Software Failures?**
+- &nbsp; <span class="badge">FSE'25</span> &nbsp;**Towards Understanding Performance Bugs in Popular Data Science Libraries**
 
-  <span style="font-size:13px;"> <strong><em>Junjielong Xu</em></strong>, Qinan Zhang, Zhiqing Zhong, Shilin He, Chaoyun Zhang, Qingwei Lin, Dan Pei, Pinjia He, Dongmei Zhang, Qi Zhang.</span>
+  <span style="font-size:13px;"> <strong><em>Haowen Yang</em></strong>, Zhengda Li, Zhiqing Zhong, Xiaoying Tang, Pinjia He.</span>
 
-  <span style="font-size:14px;"> *International Conference on Learning Representations*, Singapore, April 2025. </span>
+  <span style="font-size:14px;"> *ACM SIGSOFT International Symposium on the Foundations of Software Engineering*, June 2025. </span>
 
-  [[paper](https://openreview.net/pdf?id=M4qNIzQYpd)]
-  [[code](https://github.com/microsoft/OpenRCA)]
+  [[paper](#)]
 
-- &nbsp; <span class="badge">ICSE'25</span> &nbsp;**Aligning the Objective of LLM-based Program Repair**
+- &nbsp; <span class="badge">ICSE'25</span> &nbsp;**An Empirical Study on Commit Message Generation using LLMs via In-Context Learning**
 
-  <span style="font-size:13px;"> <strong><em>Junjielong Xu</em></strong>, Ying Fu, Shin Hwei Tan, Pinjia He.</span>
+  <span style="font-size:13px;"> Yifan Wu, Yunpeng Wang, Ying Li, Wei Tao, Siyu Yu, <strong><em>Haowen Yang</em></strong>, Wei Jiang, Jianguo Li.</span>
 
-  <span style="font-size:14px;"> *International Conference on Software Engineering*, Ottawa, April 2025. </span>
+  <span style="font-size:14px;"> *International Conference on Software Engineering*, May 2025. </span>
 
-  [[paper](https://arxiv.org/pdf/2404.08877)]
-  [[code](https://github.com/CUHK-Shenzhen-SE/D4C)]
+  [[paper](https://arxiv.org/abs/2502.18904)]
 
-- &nbsp; <span class="badge">ICSE'24</span> &nbsp;**DivLog: Log Parsing with Prompt Enhanced In-Context Learning**
+- &nbsp; <span class="badge">ICSE'25</span> &nbsp;**An Empirical Study on Package-Level Deprecation in Python Ecosystem**
 
-  <span style="font-size:13px;"> <strong><em>Junjielong Xu</em></strong>, Ruichun Yang, Yintong Huo, Chengyu Zhang, Pinjia He.</span>
+  <span style="font-size:13px;"> Zhiqing Zhong, Shilin He, Haoxuan Wang, BoXi Yu, <strong><em>Haowen Yang</em></strong>, Pinjia He.</span>
 
-  <span style="font-size:14px;"> *International Conference on Software Engineering*, Lisbon, April 2024. </span>
+  <span style="font-size:14px;"> *International Conference on Software Engineering*, May 2025. </span>
 
-  [[paper](https://dl.acm.org/doi/abs/10.1145/3597503.3639155)]
-  [[code](https://github.com/logpai/logparser)]
-
-- &nbsp; <span class="badge">ICSE'24</span> &nbsp;**UniLog: Automatic Logging via LLM and In-Context Learning**
-
-  <span style="font-size:13px;"> <strong><em>Junjielong Xu</em></strong>, Ziang Cui, Yuan Zhao, Xu Zhang, Shilin He, Pinjia He, Liqun Li, Yu Kang, Qingwei Lin, Yingnong Dang, Saravan Rajmohan, Dongmei Zhang</span>
-
-  <span style="font-size:14px;"> *International Conference on Software Engineering*, Lisbon, April 2024. </span>
-
-  [[paper](https://dl.acm.org/doi/abs/10.1145/3597503.3623326)]
-  [[code](https://github.com/shuaijiumei/logging-benchmark)]
-
-- &nbsp; <span class="badge">FSE'23</span> &nbsp;**Hue: A User-Adaptive Parser for Hybrid Logs**
-
-  <span style="font-size:13px;"> <strong><em>Junjielong Xu</em></strong>, Qiuai Fu, Zhouruixing Zhu, Yutong Cheng, Zhijing Li, Yuchi Ma, Pinjia He.</span>
-
-  <span style="font-size:14px;"> *International Conference on the Foundations of Software Engineering*, San Francisco, December 2023. </span>
-
-  [[paper](https://dl.acm.org/doi/abs/10.1145/3611643.3616260)]
-  [[code](https://github.com/Siyuexi/Hue)]
+  [[paper](https://arxiv.org/abs/2408.10327)]
 
 
 # 💬 Service
 
 *Journal*
-- Reviewer, [TSE](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=32), [TOSEM](https://dl.acm.org/journal/tosem)
+- Reviewer, [TOSEM](https://dl.acm.org/journal/tosem)
 
-*Conference*
-- Art Design Chair: FSE'26
-- Program Committee: FSE'25 (industry-track), ICSE'25 (shadow-PC)
-- Artifact Evaluation Committee: ICSE'25, ISSRE'24
 
 # 💻 Internships
 
-- *2023.12 - 2024.09*, Microsoft DKI Team, researcher.
 - *2023.05 - 2023.09*, Huawei Cloud PaaS Lab, researcher.
-- *2021.06 - 2021.08*, Tencent IEG User Platform, engineer.
 
 # 📖 Educations
 
-- *2022.09 - 2026.06 (now)*, Ph.D. in Computer Science, The Chinese University of Hong Kong, Shenzhen. 
-- *2018.09 - 2022.06*, B.Eng. in Electronic Information Engineering, Huazhong University of Science and Technology.
+- *2025.02 - now*, Ph.D. in Computer Science, The Hong Kong University of Science and Technology (Guangzhou). 
+- *2022.09 - 2024.10 , M.Phil. in Computer and Information Engineering, The Chinese University of Hong Kong, Shenzhen. 
+- *2018.09 - 2022.06*, B.Eng. in Automation, Nanjing University of Aeronautics and Astronatics.

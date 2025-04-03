@@ -25,8 +25,6 @@ Junjielong Xu is a Ph.D. candidate of Computer Science in the [School of Data Sc
 
 😊 He is currently looking for *visiting* or *internship* opportunities. Feel free to reach out if you are interested and would like to discuss ideas or collaborate on research project.
 
-***P.S.*** My name "Junjielong Xu" is written as "徐俊杰龙" in Chinese, and is pronounced like "Joon-jyeh-long Shoo."
-
 # 🔥 News
 
 - *2025.03*: &nbsp;🎉🎉 I served as Art Design Chair for **FSE'26**. 
@@ -83,13 +81,6 @@ Junjielong Xu is a Ph.D. candidate of Computer Science in the [School of Data Sc
   [[code](https://github.com/Siyuexi/Hue)]
 
 
-# 🎖 Honors and Awards
-
-- *2024.04* 💰Duan Yong Ping Travel Award, CUHK-Shenzhen (¥10,000)
-- *2023.12* 🥉3rd Prize, CCF International AIOps Challenge (Ranked 🏅1st among student teams)
-- *2020.10* 🏅1st Prize, China Undergraduate Mathematical Contest in Modeling (CUMCM) (🤺Leader)
-- *2020.04* 🏆Finalist Prize, Mathematical Contest In Modeling (MCM) (🤺Solo)
-
 # 💬 Service
 
 *Journal*
@@ -110,13 +101,3 @@ Junjielong Xu is a Ph.D. candidate of Computer Science in the [School of Data Sc
 
 - *2022.09 - 2026.06 (now)*, Ph.D. in Computer Science, The Chinese University of Hong Kong, Shenzhen. 
 - *2018.09 - 2022.06*, B.Eng. in Electronic Information Engineering, Huazhong University of Science and Technology.
-
-# 📐 Teaching
-
-*Teaching Assistant @CUHK-SZ*
-
-- *2025.02* - CSC4001 Software Engineering
-- *2024.09* - CSC1001 Python Programming
-- *2024.02* - CSC4001 Software Engineering
-- *2023.02* - CSC4001 Software Engineering
-- *2022.09* - CSC1003 Java Programming

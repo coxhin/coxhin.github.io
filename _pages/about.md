@@ -66,7 +66,7 @@ Collaborations and discussions in these domains are welcomed.
 
 # 💻 Internships
 
-- *2023.05 - 2023.09*, Huawei Cloud PaaS Lab, researcher.
+- *2023.06 - 2023.09*, Huawei Cloud PaaS Lab, researcher.
 
 # 📖 Educations
 

@@ -37,7 +37,7 @@ Collaborations and discussions in these domains are welcomed.
 
   <span style="font-size:13px;"> <strong><em>Haowen Yang</em></strong>, Zhengda Li, Zhiqing Zhong, Xiaoying Tang, Pinjia He.</span>
 
-  <span style="font-size:14px;"> *ACM SIGSOFT International Symposium on the Foundations of Software Engineering*, June 2025. </span>
+  <span style="font-size:14px;"> *ACM International Conference on the Foundations of Software Engineering*, June 2025. </span>
 
   [[paper](#)]
 

@@ -27,7 +27,7 @@ Collaborations and discussions in these domains are welcomed.
 
 # 🔥 News
 
-- *2025.03*: &nbsp;🎉🎉 One first-authored paper was accepted by **FSE'25**.
+- *2025.04*: &nbsp;🎉🎉 One first-authored paper was accepted by **FSE'25**.
 - *2024.09*: &nbsp;🎉🎉 I served as a Reviewer for **TOSEM'25**.
 - *2024.08*: &nbsp;🎉🎉 Our paper was accepted by **ICSE'25**.
 

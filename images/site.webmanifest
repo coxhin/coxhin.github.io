@@ -5,8 +5,7 @@
       {
           "src": "/web_mingfeiLu.png",
           "sizes": "1080x1556",
-          "type": "image/png",
-          "purpose": "maskable"
+          "type": "image/png"
       }
     ],
     "theme_color": "#ffffff",

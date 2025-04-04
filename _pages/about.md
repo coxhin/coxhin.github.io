@@ -19,7 +19,7 @@ redirect_from:
 
 Haowen Yang is a first year PhD student from [Data Science and Analytics Thrust](https://dsa.hkust-gz.edu.cn/), [Information Hub](https://www.hkust-gz.edu.cn/academics/hubs-and-thrust-areas/information-hub/), [HKUST (Guangzhou)](https://www.hkust-gz.edu.cn/).
 He is fortunate to be advised by [Prof. Zishuo Ding](https://personal.hkust-gz.edu.cn/ding/). 
-Previously, he earned my MPhil from CUHK-Shenzhen where he was fortunate to be advised by [Prof. Pinjia He](https://pinjiahe.github.io/) at the [School of Data Science](https://cs.pku.edu.cn/). Before joining CUHK-Shenzhen, received his BEng degree from the [College of Automation Engineering](https://cae.nuaa.edu.cn/zdh_en/) at [Nanjing University of Aeronautics and Astronatics (NUAA)](https://www.nuaa.edu.cn/) in 2022.
+Previously, he earned my MPhil from [CUHK-Shenzhen](https://www.cuhk.edu.cn/en) where he was fortunate to be advised by [Prof. Pinjia He](https://pinjiahe.github.io/) at the [School of Data Science](https://cs.pku.edu.cn/). Before joining CUHK-Shenzhen, received his BEng degree from the [College of Automation Engineering](https://cae.nuaa.edu.cn/zdh_en/) at [Nanjing University of Aeronautics and Astronatics (NUAA)](https://www.nuaa.edu.cn/) in 2022.
 
 🔎 His current research interest lies in LLM4SE, particularly LLMs for code efficiency, and OSS. 
 Collaborations and discussions in these domains are welcomed.

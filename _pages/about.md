@@ -73,5 +73,5 @@ Collaborations and discussions in these domains are welcomed.
 # 📖 Educations
 
 - *2025.02 - now*, Ph.D. in Computer Science, The Hong Kong University of Science and Technology (Guangzhou). 
-- *2022.09 - 2024.10 , M.Phil. in Computer and Information Engineering, The Chinese University of Hong Kong, Shenzhen. 
+- *2022.09 - 2024.10* , M.Phil. in Computer and Information Engineering, The Chinese University of Hong Kong, Shenzhen. 
 - *2018.09 - 2022.06*, B.Eng. in Automation, Nanjing University of Aeronautics and Astronatics.

@@ -1,7 +1,7 @@
-
 ---
+layout: post
 title: "我的第一篇博客"
 date: 2025-04-23
 ---
 
-这是我的第一篇博客内容。
+# how to install scitools understand in linux and using its api

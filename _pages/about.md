@@ -39,7 +39,7 @@ Collaborations and discussions in these domains are welcomed.
 
   <span style="font-size:14px;"> *ACM International Conference on the Foundations of Software Engineering*, June 2025. </span>
 
-  [[paper](/blob/main/docs/FSE_Revision_Towards_understanding_performance_bug_in_data_science_libraries_CAMERA_READY.pdf)]
+  [[paper](https://HaowenYoung.github.io/docs/FSE_Revision_Towards_understanding_performance_bug_in_data_science_libraries_CAMERA_READY.pdf)]
 
 - &nbsp; <span class="badge">ICSE'25</span> &nbsp;**An Empirical Study on Commit Message Generation using LLMs via In-Context Learning**
 

@@ -3,7 +3,7 @@
 layout: post
 title: "how to install scitools understand in linux and using its api"
 date: 2025-04-23
-
+toc: false
 tags: [Debug]
 
 ---

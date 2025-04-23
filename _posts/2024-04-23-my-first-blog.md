@@ -1,12 +1,18 @@
 ---
 
 layout: post
-title: "**how to install scitools understand in linux and using its api**"
+title: "how to install scitools understand in linux and using its api"
 date: 2025-04-23
 
 tags: [Debug]
 
 ---
+
+# Abstract
+
+The blog share some debug experience of install scitools understand in linux.
+
+# Details
 
 The following link basically tell you what to do.
 

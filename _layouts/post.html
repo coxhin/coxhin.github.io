@@ -1,114 +1,113 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
   <title>{{ page.title }}</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
   <style>
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
-      background: #f4f4f4;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #fefefe;
       margin: 0;
       padding: 0;
-      color: #333;
     }
+    a { color: #007acc; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    img { max-width: 100%; height: auto; }
 
-    .post-wrapper {
-      max-width: 920px;
-      margin: 4rem auto;
-      background: #fff;
-      padding: 3rem 2rem;
-      border-radius: 12px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 2rem;
+      display: flex;
+      gap: 2rem;
     }
-
-    .post-title {
-      text-align: center;
-      font-size: 2.4rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .post-date {
-      text-align: center;
-      color: #888;
-      margin-bottom: 2rem;
-      font-size: 0.95rem;
-    }
-
-    .post-toc {
-      background: #f9f9f9;
-      border-left: 4px solid #007acc;
-      padding: 1rem 1.5rem;
-      margin-bottom: 2rem;
-      border-radius: 6px;
-    }
-
-    .post-toc h3 {
-      margin-top: 0;
-      font-size: 1.2rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .post-toc ul {
-      list-style: none;
-      padding-left: 0;
-      font-size: 0.95rem;
-    }
-
-    .post-toc ul li {
-      margin: 0.4rem 0;
-    }
-
-    .post-toc a {
-      text-decoration: none;
-      color: #007acc;
-    }
-
     .post-content {
-      line-height: 1.8;
-      font-size: 1.05rem;
-    }
-
-    .post-content img {
-      max-width: 100%;
-      display: block;
-      margin: 1.5rem auto;
+      flex: 3;
+      background: white;
+      padding: 2rem;
       border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+    .post-content h1 {
+      margin-top: 0;
+    }
+    .post-meta {
+      color: #888;
+      font-size: 0.9rem;
+      margin-bottom: 1.5rem;
     }
 
-    .back-link {
-      display: block;
-      text-align: center;
-      margin-top: 3rem;
-      color: #007acc;
-      text-decoration: none;
-      font-weight: bold;
+    .toc {
+      flex: 1;
+      position: sticky;
+      top: 100px;
+      max-height: 70vh;
+      overflow-y: auto;
+      background: #f9f9f9;
+      padding: 1rem;
+      border-left: 2px solid #eee;
+      border-radius: 8px;
+      font-size: 0.9rem;
     }
-
-    .back-link:hover {
-      text-decoration: underline;
+    .toc h3 {
+      margin-top: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .toc-content ul {
+      list-style: none;
+      padding-left: 1rem;
+    }
+    .toc-content ul li {
+      margin: 0.3rem 0;
     }
   </style>
 </head>
 <body>
-  <div class="post-wrapper">
-    <h1 class="post-title">{{ page.title }}</h1>
-    <div class="post-date">{{ page.date | date: "%Y年%-m月%-d日" }}</div>
 
-    {% if page.toc != false %}
-    <div class="post-toc">
-      <h3>目录</h3>
-      {{ content | toc_only }}
-    </div>
-    {% endif %}
+  {% include header.html %}
 
+  <div class="container">
+    <!-- 正文部分 -->
     <div class="post-content">
+      <h1>{{ page.title }}</h1>
+      <div class="post-meta">{{ page.date | date: "%Y-%m-%d" }}</div>
       {{ content }}
     </div>
 
-    <a class="back-link" href="{{ "/blog/" | relative_url }}">← 返回博客列表</a>
+    <!-- 右侧目录 -->
+    {% if page.toc != false %}
+    <div class="toc">
+      <h3>
+        目录
+        <button onclick="toggleToc()" style="background: none; border: none; font-size: 1rem; cursor: pointer;">🔽</button>
+      </h3>
+      <div id="toc-content" class="toc-content">
+        {{ content | toc_only }}
+      </div>
+    </div>
+    {% endif %}
   </div>
+
+  {% include footer.html %}
+
+  <script>
+    function toggleToc() {
+      const toc = document.getElementById("toc-content");
+      const btn = event.currentTarget;
+      if (toc.style.display === "none") {
+        toc.style.display = "block";
+        btn.textContent = "🔽";
+      } else {
+        toc.style.display = "none";
+        btn.textContent = "▶️";
+      }
+    }
+  </script>
 </body>
 </html>

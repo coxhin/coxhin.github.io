@@ -2,47 +2,23 @@
 layout: default
 ---
 
-<article class="posts">
-  
-  <h1>{{ page.title }}</h1>
+<div class="blog-container" style="max-width: 800px; margin: auto; padding: 2rem;">
+  <h1 style="text-align: center; margin-bottom: 2rem;">Blog</h1>
 
-  <div class="meta">
-    <span class="date">
-      {{ page.date | date: "%Y-%m-%d" }}
-    </span>
-
-    <ul class="tag">
-      {% for tag in page.tags %}
-      <li>
-        <a href="{{ site.url }}{{ site.baseurl }}/tags#{{ tag }}">
-          {{ tag }}
-        </a>
-      </li>
-      {% endfor %}
-    </ul>
-  </div>
-
-  
-
-  <div class="entry">
-    {{ content }}
-  </div>
-
-</article>
-
-<div class="pagination">
-  {% if page.previous.url %}
-    <span class="prev" >
-      <a href="{{ site.url }}{{ site.baseurl }}{{ page.previous.url }}">
-        ← 上一篇
-      </a>
-    </span>
-  {% endif %}
-  {% if page.next.url %}
-    <span class="next" >
-      <a href="{{ site.url }}{{ site.baseurl }}{{ page.next.url }}">
-        下一篇 →
-      </a>
-    </span>
+  {% if site.posts.size == 0 %}
+    <p>No blog posts found.</p>
+  {% else %}
+    {% for post in site.posts %}
+      <div class="blog-card" style="margin-bottom: 2rem; padding: 1.5rem; border: 1px solid #e0e0e0; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); transition: box-shadow 0.2s;">
+        <h2 style="margin-top: 0;">
+          <a href="{{ post.url | relative_url }}" style="text-decoration: none; color: #333;">
+            {{ post.title }}
+          </a>
+        </h2>
+        <p style="color: #888; font-size: 0.9rem;">{{ post.date | date: "%Y-%m-%d" }}</p>
+        <p>{{ post.excerpt | strip_html | truncate: 150 }}</p>
+        <a href="{{ post.url | relative_url }}" style="color: #007acc; font-weight: bold;">Read more →</a>
+      </div>
+    {% endfor %}
   {% endif %}
 </div>

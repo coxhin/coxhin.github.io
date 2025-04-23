@@ -1,4 +1,3 @@
-<!-- _layouts/post.html -->
 <!DOCTYPE html>
 <html lang="zh">
 <head>
@@ -6,17 +5,110 @@
   <title>{{ page.title }}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+    .post-wrapper {
+      max-width: 920px;
+      margin: 4rem auto;
+      background: #fff;
+      padding: 3rem 2rem;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+    }
+
+    .post-title {
+      text-align: center;
+      font-size: 2.4rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .post-date {
+      text-align: center;
+      color: #888;
+      margin-bottom: 2rem;
+      font-size: 0.95rem;
+    }
+
+    .post-toc {
+      background: #f9f9f9;
+      border-left: 4px solid #007acc;
+      padding: 1rem 1.5rem;
+      margin-bottom: 2rem;
+      border-radius: 6px;
+    }
+
+    .post-toc h3 {
+      margin-top: 0;
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .post-toc ul {
+      list-style: none;
+      padding-left: 0;
+      font-size: 0.95rem;
+    }
+
+    .post-toc ul li {
+      margin: 0.4rem 0;
+    }
+
+    .post-toc a {
+      text-decoration: none;
+      color: #007acc;
+    }
+
+    .post-content {
+      line-height: 1.8;
+      font-size: 1.05rem;
+    }
+
+    .post-content img {
+      max-width: 100%;
+      display: block;
+      margin: 1.5rem auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .back-link {
+      display: block;
+      text-align: center;
+      margin-top: 3rem;
+      color: #007acc;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
-  <div class="container" style="max-width: 800px; margin: auto; padding: 2rem;">
-    <h1 style="text-align: center;">{{ page.title }}</h1>
-    <p style="text-align: center; color: #888;">{{ page.date | date: "%Y-%m-%d" }}</p>
-    <div class="post-content" style="margin-top: 2rem;">
+  <div class="post-wrapper">
+    <h1 class="post-title">{{ page.title }}</h1>
+    <div class="post-date">{{ page.date | date: "%Y年%-m月%-d日" }}</div>
+
+    {% if page.toc != false %}
+    <div class="post-toc">
+      <h3>目录</h3>
+      {{ content | toc_only }}
+    </div>
+    {% endif %}
+
+    <div class="post-content">
       {{ content }}
     </div>
-    <div style="margin-top: 3rem;">
-      <a href="{{ "/blog/" | relative_url }}" style="color: #007acc;">← 返回博客列表</a>
-    </div>
+
+    <a class="back-link" href="{{ "/blog/" | relative_url }}">← 返回博客列表</a>
   </div>
 </body>
 </html>

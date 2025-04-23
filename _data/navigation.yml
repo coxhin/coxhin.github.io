@@ -22,7 +22,7 @@ main:
     url: "/#-educations"
 
   - title: "Blog"
-  url: "/_posts/"
+    url: "/_posts/"
 
   # - title: "Teaching"
   #   url: "/#-teaching"

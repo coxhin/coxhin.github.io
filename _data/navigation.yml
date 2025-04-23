@@ -21,8 +21,10 @@ main:
   - title: "Educations"
     url: "/#-educations"
 
+  - title: "Blog"
+  url: "/_posts/"
+
   # - title: "Teaching"
   #   url: "/#-teaching"
   
-  - title: "Blog"
-  url: "/blog/"
+

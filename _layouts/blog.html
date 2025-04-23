@@ -2,7 +2,7 @@
 layout: none
 ---
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -46,6 +46,29 @@ layout: none
     .blog-card .date {
       color: #888;
       font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+    }
+
+    /* ✅ Tag 样式 */
+    .tags {
+      margin-top: 0.5rem;
+    }
+
+    .tag {
+      display: inline-block;
+      margin-right: 0.5rem;
+      margin-top: 0.3rem;
+      padding: 0.3rem 0.6rem;
+      background-color: #eef6fb;
+      color: #007acc;
+      font-size: 0.8rem;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: background-color 0.2s;
+    }
+
+    .tag:hover {
+      background-color: #dceefb;
     }
   </style>
 </head>
@@ -61,6 +84,16 @@ layout: none
           <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
           <p class="date">{{ post.date | date: "%Y-%m-%d" }}</p>
           <p>{{ post.excerpt | strip_html | truncate: 150 }}</p>
+          
+          <!-- ✅ 展示 tags -->
+          {% if post.tags %}
+            <div class="tags">
+              {% for tag in post.tags %}
+                <a class="tag" href="{{ '/tags/' | append: tag | relative_url }}">{{ tag }}</a>
+              {% endfor %}
+            </div>
+          {% endif %}
+
           <a href="{{ post.url | relative_url }}">Read more →</a>
         </div>
       {% endfor %}

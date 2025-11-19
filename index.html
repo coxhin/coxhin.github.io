@@ -1,0 +1,375 @@
+---
+layout: null
+---
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Haowen Yang | PhD Student</title>
+    <meta name="description" content="Personal Homepage of Haowen Yang, Ph.D. student at HKUST(GZ)">
+    
+    <!-- Tailwind CSS (通过 CDN 引入，生产环境建议使用构建工具) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- 配置 Tailwind 主题色 -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            500: '#0ea5e9', // Sky blue
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            900: '#0c4a6e',
+                        },
+                        dark: {
+                            bg: '#0f172a', // Slate 900
+                            card: '#1e293b', // Slate 800
+                            text: '#cbd5e1', // Slate 300
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'Fira Code', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- 引入 Google Fonts (Inter & JetBrains Mono) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- 图标库 Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        /* 自定义一些细微的动画 */
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* 玻璃拟态导航栏背景 */
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+        .dark .glass-nav {
+            background: rgba(15, 23, 42, 0.7);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans transition-colors duration-300 dark:bg-dark-bg dark:text-slate-300 antialiased selection:bg-primary-500 selection:text-white">
+
+    <!-- 导航栏 -->
+    <nav class="fixed w-full top-0 z-50 glass-nav transition-all duration-300" id="navbar">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <!-- Logo / Name -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#" class="text-xl font-bold tracking-tight text-slate-900 dark:text-white hover:text-primary-600 transition-colors">
+                        Haowen<span class="text-primary-500">.Yang</span>
+                    </a>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#about" class="text-sm font-medium hover:text-primary-600 dark:hover:text-primary-400 transition-colors">About</a>
+                    <a href="#news" class="text-sm font-medium hover:text-primary-600 dark:hover:text-primary-400 transition-colors">News</a>
+                    <a href="#publications" class="text-sm font-medium hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Publications</a>
+                    <a href="#experience" class="text-sm font-medium hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Experience</a>
+                    
+                    <!-- Dark Mode Toggle -->
+                    <button id="theme-toggle" class="p-2 rounded-full hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors focus:outline-none">
+                        <i data-lucide="moon" class="w-5 h-5 block dark:hidden"></i>
+                        <i data-lucide="sun" class="w-5 h-5 hidden dark:block text-yellow-400"></i>
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="flex md:hidden items-center space-x-4">
+                    <button id="theme-toggle-mobile" class="p-2 rounded-full hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
+                         <i data-lucide="moon" class="w-5 h-5 block dark:hidden"></i>
+                         <i data-lucide="sun" class="w-5 h-5 hidden dark:block text-yellow-400"></i>
+                    </button>
+                    <button id="mobile-menu-btn" class="p-2 rounded-md text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 focus:outline-none">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu Panel -->
+        <div class="md:hidden hidden bg-white dark:bg-dark-card border-b border-slate-100 dark:border-slate-700 absolute w-full" id="mobile-menu">
+            <div class="px-4 pt-2 pb-4 space-y-1 shadow-lg">
+                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-primary-600">About</a>
+                <a href="#news" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-primary-600">News</a>
+                <a href="#publications" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-primary-600">Publications</a>
+                <a href="#experience" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-primary-600">Experience</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Wrapper -->
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-20 space-y-24">
+
+        <!-- 1. Hero / About Section -->
+        <section id="about" class="fade-in-up">
+            <div class="flex flex-col md:flex-row items-start md:items-center gap-8 md:gap-12">
+                <!-- Avatar -->
+                <div class="relative group flex-shrink-0 mx-auto md:mx-0">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-primary-500 to-purple-600 rounded-full blur opacity-25 group-hover:opacity-75 transition duration-500"></div>
+                    <img src="https://haowenyoung.github.io/images/profile_pic_new.png" alt="Haowen Yang" class="relative w-40 h-40 md:w-48 md:h-48 rounded-full object-cover border-4 border-white dark:border-slate-800 shadow-xl">
+                </div>
+                
+                <!-- Intro Text -->
+                <div class="text-center md:text-left flex-1">
+                    <h1 class="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white tracking-tight mb-2">
+                        Haowen Yang
+                    </h1>
+                    <p class="text-lg md:text-xl text-slate-600 dark:text-slate-400 font-medium mb-4">
+                        Ph.D. Student @ <span class="text-primary-600 dark:text-primary-400">HKUST(GZ)</span>
+                    </p>
+                    <p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
+                        I am a first-year Ph.D. student in the <a href="#" class="hover:text-primary-500 underline decoration-dotted">Data Science and Analytics Thrust</a> at HKUST(GZ), advised by <a href="#" class="font-medium text-primary-600 hover:underline">Prof. Zishuo Ding</a>. 
+                        <br class="hidden md:block">
+                        Previously, I obtained my MPhil from CUHK-Shenzhen. My research interests lie in 
+                        <span class="font-semibold text-slate-800 dark:text-slate-200 bg-slate-100 dark:bg-slate-700 px-1 py-0.5 rounded">LLM4SE</span>, 
+                        specifically LLMs for code efficiency and OSS.
+                    </p>
+                    
+                    <!-- Social Links -->
+                    <div class="flex justify-center md:justify-start gap-4">
+                        <a href="mailto:hyang464@connect.hkust-gz.edu.cn" class="flex items-center gap-2 px-4 py-2 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-lg hover:bg-slate-700 dark:hover:bg-slate-200 transition-all text-sm font-medium shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
+                            <i data-lucide="mail" class="w-4 h-4"></i> Email
+                        </a>
+                        <a href="https://github.com/haowenyoung" target="_blank" class="flex items-center gap-2 px-4 py-2 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700 rounded-lg hover:border-primary-500 dark:hover:border-primary-500 hover:text-primary-600 transition-all text-sm font-medium shadow-sm hover:shadow-md">
+                            <i data-lucide="github" class="w-4 h-4"></i> Github
+                        </a>
+                        <a href="#" class="flex items-center gap-2 px-4 py-2 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700 rounded-lg hover:border-blue-500 hover:text-blue-600 transition-all text-sm font-medium shadow-sm hover:shadow-md">
+                            <i data-lucide="graduation-cap" class="w-4 h-4"></i> Scholar
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. News Section -->
+        <section id="news" class="fade-in-up delay-100">
+            <h2 class="flex items-center gap-3 text-2xl font-bold text-slate-900 dark:text-white mb-8">
+                <i data-lucide="flame" class="text-orange-500"></i> News
+            </h2>
+            
+            <div class="relative pl-4 border-l-2 border-slate-200 dark:border-slate-700 space-y-8">
+                <!-- News Item -->
+                <div class="relative">
+                    <span class="absolute -left-[21px] top-1 h-4 w-4 rounded-full bg-white dark:bg-slate-900 border-2 border-primary-500"></span>
+                    <div class="flex flex-col sm:flex-row sm:items-baseline gap-2 mb-1">
+                        <span class="font-mono text-xs font-semibold text-primary-600 dark:text-primary-400 bg-primary-50 dark:bg-primary-900/30 px-2 py-0.5 rounded">2025.04</span>
+                        <span class="text-slate-700 dark:text-slate-300">One first-authored paper accepted by <strong class="text-slate-900 dark:text-white">FSE'25</strong>! 🎉</span>
+                    </div>
+                </div>
+                
+                <!-- News Item -->
+                <div class="relative">
+                    <span class="absolute -left-[21px] top-1 h-4 w-4 rounded-full bg-white dark:bg-slate-900 border-2 border-slate-300 dark:border-slate-600"></span>
+                    <div class="flex flex-col sm:flex-row sm:items-baseline gap-2 mb-1">
+                        <span class="font-mono text-xs font-semibold text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded">2024.09</span>
+                        <span class="text-slate-700 dark:text-slate-300">Served as a Reviewer for <strong class="text-slate-900 dark:text-white">TOSEM'25</strong>.</span>
+                    </div>
+                </div>
+
+                <!-- News Item -->
+                <div class="relative">
+                    <span class="absolute -left-[21px] top-1 h-4 w-4 rounded-full bg-white dark:bg-slate-900 border-2 border-slate-300 dark:border-slate-600"></span>
+                    <div class="flex flex-col sm:flex-row sm:items-baseline gap-2 mb-1">
+                        <span class="font-mono text-xs font-semibold text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded">2024.08</span>
+                        <span class="text-slate-700 dark:text-slate-300">Paper accepted by <strong class="text-slate-900 dark:text-white">ICSE'25</strong>.</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Publications Section -->
+        <section id="publications" class="fade-in-up delay-200">
+            <h2 class="flex items-center gap-3 text-2xl font-bold text-slate-900 dark:text-white mb-8">
+                <i data-lucide="book-open" class="text-purple-500"></i> Selected Publications
+            </h2>
+            
+            <div class="space-y-6">
+                <!-- Paper 1 -->
+                <div class="group relative bg-white dark:bg-dark-card p-6 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700 hover:shadow-md hover:border-primary-200 dark:hover:border-primary-900 transition-all duration-300">
+                    <div class="flex justify-between items-start gap-4 mb-2">
+                        <h3 class="text-lg font-semibold text-slate-900 dark:text-white leading-tight group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
+                            Towards Understanding Performance Bugs in Popular Data Science Libraries
+                        </h3>
+                        <span class="flex-shrink-0 px-2.5 py-1 rounded text-xs font-bold bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-300 border border-purple-200 dark:border-purple-800">FSE 2025</span>
+                    </div>
+                    
+                    <div class="text-sm text-slate-600 dark:text-slate-400 mb-3">
+                        <span class="font-semibold text-slate-900 dark:text-white border-b-2 border-primary-500/30">Haowen Yang</span>, Zhengda Li, Zhiqing Zhong, Xiaoying Tang, Pinjia He
+                    </div>
+                    
+                    <div class="flex gap-3 pt-2">
+                        <a href="#" class="inline-flex items-center gap-1.5 text-xs font-medium text-slate-600 dark:text-slate-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                            <i data-lucide="file-text" class="w-3.5 h-3.5"></i> PDF
+                        </a>
+                        <a href="#" class="inline-flex items-center gap-1.5 text-xs font-medium text-slate-600 dark:text-slate-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                            <i data-lucide="code-2" class="w-3.5 h-3.5"></i> Code
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Paper 2 -->
+                <div class="group relative bg-white dark:bg-dark-card p-6 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700 hover:shadow-md hover:border-primary-200 dark:hover:border-primary-900 transition-all duration-300">
+                    <div class="flex justify-between items-start gap-4 mb-2">
+                        <h3 class="text-lg font-semibold text-slate-900 dark:text-white leading-tight group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
+                            An Empirical Study on Commit Message Generation using LLMs via In-Context Learning
+                        </h3>
+                        <span class="flex-shrink-0 px-2.5 py-1 rounded text-xs font-bold bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300 border border-blue-200 dark:border-blue-800">ICSE 2025</span>
+                    </div>
+                    
+                    <div class="text-sm text-slate-600 dark:text-slate-400 mb-3">
+                        Yifan Wu, Yunpeng Wang, Ying Li, Wei Tao, Siyu Yu, <span class="font-semibold text-slate-900 dark:text-white border-b-2 border-primary-500/30">Haowen Yang</span>, Wei Jiang, Jianguo Li
+                    </div>
+                    
+                    <div class="flex gap-3 pt-2">
+                        <a href="https://arxiv.org/abs/2502.18904" class="inline-flex items-center gap-1.5 text-xs font-medium text-slate-600 dark:text-slate-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                            <i data-lucide="external-link" class="w-3.5 h-3.5"></i> arXiv
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-4 text-right">
+                <a href="#" class="text-sm font-medium text-primary-600 hover:text-primary-700 hover:underline">View all publications &rarr;</a>
+            </div>
+        </section>
+
+        <!-- 4. Experience & Education Grid -->
+        <section id="experience" class="fade-in-up delay-300">
+             <div class="grid md:grid-cols-2 gap-12">
+                 
+                 <!-- Education -->
+                 <div>
+                     <h2 class="flex items-center gap-3 text-2xl font-bold text-slate-900 dark:text-white mb-6">
+                        <i data-lucide="graduation-cap" class="text-green-500"></i> Education
+                    </h2>
+                    <div class="space-y-6 border-l border-slate-200 dark:border-slate-700 ml-2 pl-6">
+                        <div class="relative">
+                            <div class="absolute -left-[31px] top-1.5 h-2.5 w-2.5 rounded-full bg-slate-400 dark:bg-slate-600 ring-4 ring-white dark:ring-dark-bg"></div>
+                            <div class="font-bold text-slate-900 dark:text-white">HKUST (Guangzhou)</div>
+                            <div class="text-sm text-slate-500 dark:text-slate-400 font-mono mb-1">2025 - Present</div>
+                            <div class="text-slate-700 dark:text-slate-300 text-sm">Ph.D. in Computer Science</div>
+                        </div>
+                        <div class="relative">
+                            <div class="absolute -left-[31px] top-1.5 h-2.5 w-2.5 rounded-full bg-slate-300 dark:bg-slate-700 ring-4 ring-white dark:ring-dark-bg"></div>
+                            <div class="font-bold text-slate-900 dark:text-white">CUHK-Shenzhen</div>
+                            <div class="text-sm text-slate-500 dark:text-slate-400 font-mono mb-1">2022 - 2024</div>
+                            <div class="text-slate-700 dark:text-slate-300 text-sm">M.Phil. in CIE</div>
+                        </div>
+                        <div class="relative">
+                            <div class="absolute -left-[31px] top-1.5 h-2.5 w-2.5 rounded-full bg-slate-300 dark:bg-slate-700 ring-4 ring-white dark:ring-dark-bg"></div>
+                            <div class="font-bold text-slate-900 dark:text-white">NUAA</div>
+                            <div class="text-sm text-slate-500 dark:text-slate-400 font-mono mb-1">2018 - 2022</div>
+                            <div class="text-slate-700 dark:text-slate-300 text-sm">B.Eng. in Automation</div>
+                        </div>
+                    </div>
+                 </div>
+
+                 <!-- Internships / Service -->
+                 <div>
+                    <h2 class="flex items-center gap-3 text-2xl font-bold text-slate-900 dark:text-white mb-6">
+                        <i data-lucide="briefcase" class="text-blue-500"></i> Experience & Service
+                    </h2>
+                    <div class="space-y-4">
+                        <!-- Card -->
+                        <div class="p-4 rounded-lg bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-700">
+                            <div class="flex justify-between items-start mb-1">
+                                <div class="font-bold text-slate-900 dark:text-white">Huawei Cloud PaaS Lab</div>
+                                <span class="text-xs font-mono text-slate-500">2023.06 - 2023.09</span>
+                            </div>
+                            <div class="text-sm text-slate-600 dark:text-slate-400">Research Intern</div>
+                        </div>
+
+                        <!-- Service -->
+                        <div class="p-4 rounded-lg bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-700">
+                            <div class="font-bold text-slate-900 dark:text-white mb-2">Academic Service</div>
+                            <ul class="text-sm text-slate-600 dark:text-slate-400 space-y-1 list-disc list-inside">
+                                <li>Reviewer for <span class="font-medium text-slate-900 dark:text-white">TOSEM</span></li>
+                                <li>External Reviewer for <span class="font-medium text-slate-900 dark:text-white">ICSE 2025, ISSRE 2024</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                 </div>
+
+             </div>
+        </section>
+        
+        <footer class="text-center text-sm text-slate-400 dark:text-slate-600 py-8 border-t border-slate-100 dark:border-slate-800">
+            <p>&copy; 2025 Haowen Yang. Built with Tailwind CSS.</p>
+        </footer>
+
+    </main>
+
+    <!-- Script for Mobile Menu & Dark Mode -->
+    <script>
+        // Initialize Icons
+        lucide.createIcons();
+
+        // Dark Mode Logic
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const themeToggleMobileBtn = document.getElementById('theme-toggle-mobile');
+        
+        function toggleTheme() {
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+            }
+        }
+
+        // Check Local Storage or System Preference
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+
+        themeToggleBtn.addEventListener('click', toggleTheme);
+        themeToggleMobileBtn.addEventListener('click', toggleTheme);
+
+        // Mobile Menu Logic
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

@@ -9,10 +9,10 @@ layout: null
     <title>Haowen Yang | PhD Student</title>
     <meta name="description" content="Personal Homepage of Haowen Yang, Ph.D. student at HKUST(GZ)">
     
-    <!-- Tailwind CSS (通过 CDN 引入，生产环境建议使用构建工具) -->
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- 配置 Tailwind 主题色 -->
+    <!-- Tailwind Config -->
     <script>
         tailwind.config = {
             darkMode: 'class',
@@ -20,355 +20,500 @@ layout: null
                 extend: {
                     colors: {
                         primary: {
-                            50: '#f0f9ff',
-                            100: '#e0f2fe',
-                            500: '#0ea5e9', // Sky blue
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
                             600: '#0284c7',
-                            700: '#0369a1',
-                            900: '#0c4a6e',
                         },
                         dark: {
-                            bg: '#0f172a', // Slate 900
-                            card: '#1e293b', // Slate 800
-                            text: '#cbd5e1', // Slate 300
+                            bg: '#0a0a0a',
+                            card: 'rgba(20, 20, 20, 0.6)',
                         }
                     },
                     fontFamily: {
-                        sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
-                        mono: ['JetBrains Mono', 'Fira Code', 'monospace'],
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        serif: ['Playfair Display', 'Georgia', 'serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    animation: {
+                        'blob': 'blob 10s infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        blob: {
+                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-6px)' },
+                        }
                     }
                 }
             }
         }
     </script>
 
-    <!-- 引入 Google Fonts (Inter & JetBrains Mono) -->
+    <!-- Fonts & Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-
-    <!-- 图标库 Lucide Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:wght@400;600;700;800&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
 
     <style>
-        /* 自定义一些细微的动画 */
+        /* --- CUSTOM CURSORS (Tech Arrow Theme) --- */
+        body {
+            cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'><path d='M3 3L10.5 20.5L13.5 13.5L20.5 10.5L3 3Z' fill='%230f172a' stroke='%230ea5e9' stroke-width='1.5' stroke-linejoin='round'/></svg>") 2 2, auto;
+        }
+        a:hover, button:hover, .cursor-pointer {
+            cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'><path d='M3 3L10.5 20.5L13.5 13.5L20.5 10.5L3 3Z' fill='%230f172a' stroke='%23d946ef' stroke-width='1.5' stroke-linejoin='round'/></svg>") 2 2, pointer;
+        }
+
+        /* --- UTILITIES --- */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+        }
+        .dark .glass-card {
+            background: rgba(20, 20, 30, 0.4);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .text-gradient {
+            background: linear-gradient(to right, #0ea5e9, #6366f1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        #cursor-glow {
+            position: fixed;
+            top: 0; left: 0; width: 500px; height: 500px;
+            background: radial-gradient(circle, rgba(14, 165, 233, 0.1) 0%, rgba(139, 92, 246, 0.05) 40%, rgba(0, 0, 0, 0) 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: -1;
+            transform: translate(-50%, -50%);
+            transition: opacity 0.3s ease;
+            mix-blend-mode: screen;
+        }
+
         .fade-in-up {
-            animation: fadeInUp 0.8s ease-out forwards;
+            animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
             opacity: 0;
             transform: translateY(20px);
         }
-        
         .delay-100 { animation-delay: 0.1s; }
         .delay-200 { animation-delay: 0.2s; }
         .delay-300 { animation-delay: 0.3s; }
 
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+        @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
 
-        /* 玻璃拟态导航栏背景 */
-        .glass-nav {
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(0,0,0,0.05);
+        /* --- LOADING SCREEN ANIMATIONS --- */
+        #loader {
+            transition: opacity 1s ease-out, visibility 1s; /* 延长淡出时间 */
         }
-        .dark .glass-nav {
-            background: rgba(15, 23, 42, 0.7);
-            border-bottom: 1px solid rgba(255,255,255,0.05);
+        .loader-hidden {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+        .typing-cursor::after {
+            content: '|';
+            animation: blink 1s step-start infinite;
+        }
+        @keyframes blink { 50% { opacity: 0; } }
+
+        /* --- HOMEPAGE REVEAL ANIMATION --- */
+        /* 初始隐藏主页内容 */
+        .page-content {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1.5s ease-out, transform 1.5s cubic-bezier(0.2, 1, 0.3, 1);
+        }
+        /* 加载完成后添加此class */
+        .page-content-visible {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-800 font-sans transition-colors duration-300 dark:bg-dark-bg dark:text-slate-300 antialiased selection:bg-primary-500 selection:text-white">
+<body class="bg-slate-50 text-slate-800 font-sans transition-colors duration-500 dark:bg-[#09090b] dark:text-slate-300 antialiased relative overflow-x-hidden selection:bg-cyan-500 selection:text-white">
 
-    <!-- 导航栏 -->
-    <nav class="fixed w-full top-0 z-50 glass-nav transition-all duration-300" id="navbar">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16 items-center">
-                <!-- Logo / Name -->
-                <div class="flex-shrink-0 flex items-center">
-                    <a href="#" class="text-xl font-bold tracking-tight text-slate-900 dark:text-white hover:text-primary-600 transition-colors">
-                        Haowen<span class="text-primary-500">.Yang</span>
+    <!-- LOADING SCREEN -->
+    <div id="loader" class="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-slate-50 dark:bg-[#09090b]">
+        <div class="max-w-2xl px-6 text-center">
+            <p class="font-serif text-2xl md:text-4xl text-slate-800 dark:text-slate-100 italic leading-relaxed">
+                "<span id="motto-text"></span><span class="typing-cursor text-primary-500"></span>"
+            </p>
+            <!-- Progress bar duration matched to longer typing time -->
+            <div class="mt-8 h-1 w-24 bg-slate-200 dark:bg-slate-800 mx-auto rounded-full overflow-hidden">
+                <div class="h-full bg-primary-500 w-0 transition-all duration-[7000ms] ease-out" id="progress-bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="cursor-glow"></div>
+
+    <!-- 静态背景 -->
+    <div class="fixed inset-0 -z-20 overflow-hidden pointer-events-none">
+        <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-indigo-100/40 dark:bg-indigo-900/10 rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-[120px] opacity-50 animate-blob"></div>
+        <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-sky-100/40 dark:bg-sky-900/10 rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-[120px] opacity-50 animate-blob animation-delay-2000"></div>
+    </div>
+
+    <!-- Navigation and Main Content wrapped for fade-in -->
+    <div id="main-wrapper" class="page-content">
+        <!-- 导航栏 -->
+        <nav class="fixed w-full top-4 z-50 px-4">
+            <div class="glass-card max-w-4xl mx-auto rounded-full px-6 py-2.5 flex justify-between items-center shadow-sm transition-all duration-300">
+                <a href="#" class="text-lg font-bold tracking-tight font-serif text-slate-900 dark:text-white hover:opacity-80 transition-opacity">
+                    Haowen<span class="text-primary-500 font-sans">.Yang</span>
+                </a>
+
+                <div class="hidden md:flex items-center space-x-2">
+                    <a href="#about" class="px-3 py-1.5 text-sm font-medium rounded-md text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-white/5 hover:text-primary-600 dark:hover:text-white transition-all">About</a>
+                    <a href="#news" class="px-3 py-1.5 text-sm font-medium rounded-md text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-white/5 hover:text-primary-600 dark:hover:text-white transition-all">News</a>
+                    <a href="#publications" class="px-3 py-1.5 text-sm font-medium rounded-md text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-white/5 hover:text-primary-600 dark:hover:text-white transition-all">Publications</a>
+                    <a href="#experience" class="px-3 py-1.5 text-sm font-medium rounded-md text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-white/5 hover:text-primary-600 dark:hover:text-white transition-all">Experience</a>
+                </div>
+
+                <div class="flex items-center gap-3">
+                    <button id="theme-toggle" class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-white/10 transition-colors text-slate-600 dark:text-slate-300 focus:outline-none">
+                        <i data-lucide="moon" class="w-4 h-4 block dark:hidden"></i>
+                        <i data-lucide="sun" class="w-4 h-4 hidden dark:block text-yellow-400"></i>
+                    </button>
+                    <button id="mobile-menu-btn" class="md:hidden p-2 rounded-full hover:bg-slate-100 dark:hover:bg-white/10 transition-colors text-slate-600 dark:text-slate-300">
+                        <i data-lucide="menu" class="w-5 h-5"></i>
+                    </button>
+                </div>
+            </div>
+            <div id="mobile-menu" class="hidden absolute top-16 left-4 right-4 glass-card rounded-xl p-4 space-y-1 md:hidden flex-col shadow-lg z-50">
+                 <a href="#about" class="block px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-white/5">About</a>
+                 <a href="#news" class="block px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-white/5">News</a>
+                 <a href="#publications" class="block px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-white/5">Publications</a>
+                 <a href="#experience" class="block px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-white/5">Experience</a>
+            </div>
+        </nav>
+
+        <!-- Compact Main Layout -->
+        <main class="max-w-4xl mx-auto px-6 pt-28 pb-12 space-y-16">
+
+            <!-- Hero Section -->
+            <section id="about" class="relative">
+                <div class="flex flex-col-reverse md:flex-row items-center md:items-center gap-8 md:gap-12">
+                    <div class="flex-1 text-center md:text-left z-10">
+                        <div class="inline-flex items-center gap-2 px-3 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 text-xs font-medium mb-4">
+                            <span class="relative flex h-2 w-2">
+                              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                              <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                            </span>
+                            Open for Collaborations
+                        </div>
+
+                        <h1 class="text-4xl md:text-6xl font-bold font-serif tracking-tight mb-2 leading-tight text-slate-900 dark:text-white">
+                            Haowen <span class="text-transparent bg-clip-text bg-gradient-to-r from-slate-800 to-slate-500 dark:from-slate-100 dark:to-slate-400">Yang</span>
+                        </h1>
+                        
+                        <!-- Motto Section (Visibly Placed) -->
+                        <div class="mb-6 pl-4 border-l-2 border-primary-500/30">
+                            <p class="font-serif italic text-lg md:text-xl text-slate-700 dark:text-slate-300">
+                                "Life can only be understood backwards; but it must be lived forwards."
+                            </p>
+                        </div>
+
+                        <p class="text-lg text-slate-600 dark:text-slate-400 font-light leading-relaxed mb-6 max-w-2xl">
+                            Ph.D. Student at <span class="font-semibold text-slate-900 dark:text-white">HKUST(GZ)</span>. 
+                            My research interests lie in <span class="text-primary-600 dark:text-primary-400 font-medium">LLM4SE</span>, particularly leveraging LLMs for code efficiency and OSS.
+                        </p>
+                        
+                        <div class="flex flex-wrap justify-center md:justify-start gap-3">
+                            <a href="mailto:hyang464@connect.hkust-gz.edu.cn" class="px-5 py-2 rounded-lg bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 text-sm font-medium hover:opacity-90 transition-all flex items-center gap-2">
+                                <i data-lucide="mail" class="w-4 h-4"></i> Email
+                            </a>
+                            <a href="https://github.com/haowenyoung" target="_blank" class="px-5 py-2 rounded-lg border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 text-sm font-medium hover:border-primary-500 hover:text-primary-500 transition-all flex items-center gap-2">
+                                <i data-lucide="github" class="w-4 h-4"></i> Github
+                            </a>
+                            <a href="#" class="px-5 py-2 rounded-lg border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 text-sm font-medium hover:border-blue-500 hover:text-blue-500 transition-all flex items-center gap-2">
+                                <i data-lucide="graduation-cap" class="w-4 h-4"></i> Scholar
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="relative shrink-0 animate-float">
+                        <div class="w-40 h-40 md:w-52 md:h-52 rounded-full p-1 glass-card shadow-2xl">
+                            <img src="https://haowenyoung.github.io/images/profile_pic_new.png" alt="Haowen Yang" class="w-full h-full rounded-full object-cover">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- News Section (Compact List) -->
+            <section id="news" class="delay-100">
+                <h2 class="text-2xl font-bold font-serif text-slate-900 dark:text-white mb-6 flex items-center gap-2">
+                    News <span class="h-px flex-1 bg-slate-200 dark:bg-slate-800 ml-4"></span>
+                </h2>
+                
+                <div class="glass-card rounded-2xl p-1">
+                    <div class="divide-y divide-slate-100 dark:divide-slate-800/50">
+                        <div class="p-4 flex flex-col sm:flex-row gap-2 sm:gap-6 sm:items-baseline hover:bg-slate-50/50 dark:hover:bg-white/5 transition-colors rounded-t-xl">
+                            <span class="font-mono text-xs font-bold text-primary-600 dark:text-primary-400 shrink-0 w-20">2025.04</span>
+                            <p class="text-sm text-slate-700 dark:text-slate-300">
+                                🎉 First-authored paper accepted by <strong class="font-semibold text-slate-900 dark:text-white">FSE'25</strong>.
+                            </p>
+                        </div>
+                        <div class="p-4 flex flex-col sm:flex-row gap-2 sm:gap-6 sm:items-baseline hover:bg-slate-50/50 dark:hover:bg-white/5 transition-colors">
+                            <span class="font-mono text-xs font-bold text-slate-500 shrink-0 w-20">2024.09</span>
+                            <p class="text-sm text-slate-700 dark:text-slate-300">
+                                Served as a Reviewer for <strong class="font-semibold text-slate-900 dark:text-white">TOSEM'25</strong>.
+                            </p>
+                        </div>
+                        <div class="p-4 flex flex-col sm:flex-row gap-2 sm:gap-6 sm:items-baseline hover:bg-slate-50/50 dark:hover:bg-white/5 transition-colors rounded-b-xl">
+                            <span class="font-mono text-xs font-bold text-slate-500 shrink-0 w-20">2024.08</span>
+                            <p class="text-sm text-slate-700 dark:text-slate-300">
+                                Paper accepted by <strong class="font-semibold text-slate-900 dark:text-white">ICSE'25</strong>.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Publications Section -->
+            <section id="publications" class="delay-200">
+                <h2 class="text-2xl font-bold font-serif text-slate-900 dark:text-white mb-6 flex items-center gap-2">
+                    Selected Publications <span class="h-px flex-1 bg-slate-200 dark:bg-slate-800 ml-4"></span>
+                </h2>
+                
+                <div class="space-y-4">
+                    <!-- Paper 1 -->
+                    <div class="glass-card p-5 rounded-xl hover:border-primary-500/30 transition-colors group">
+                        <div class="flex flex-col md:flex-row gap-4 justify-between items-start">
+                            <div class="flex-1 space-y-2">
+                                <div class="flex items-center gap-2">
+                                    <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-300 border border-purple-200 dark:border-purple-800">FSE 2025</span>
+                                </div>
+                                <h3 class="text-lg font-semibold text-slate-900 dark:text-white leading-tight group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
+                                    Towards Understanding Performance Bugs in Popular Data Science Libraries
+                                </h3>
+                                <p class="text-slate-600 dark:text-slate-400 text-sm">
+                                    <span class="font-semibold text-slate-900 dark:text-white">Haowen Yang</span>, Zhengda Li, Zhiqing Zhong, Xiaoying Tang, Pinjia He
+                                </p>
+                            </div>
+                            <div class="flex gap-2 shrink-0 pt-1">
+                                <a href="#" class="text-xs font-medium px-2 py-1 rounded border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-white/5">PDF</a>
+                                <a href="#" class="text-xs font-medium px-2 py-1 rounded border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-white/5">Code</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Paper 2 -->
+                    <div class="glass-card p-5 rounded-xl hover:border-blue-500/30 transition-colors group">
+                        <div class="flex flex-col md:flex-row gap-4 justify-between items-start">
+                            <div class="flex-1 space-y-2">
+                                <div class="flex items-center gap-2">
+                                    <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300 border border-blue-200 dark:border-blue-800">ICSE 2025</span>
+                                </div>
+                                <h3 class="text-lg font-semibold text-slate-900 dark:text-white leading-tight group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                                    An Empirical Study on Commit Message Generation using LLMs via In-Context Learning
+                                </h3>
+                                <p class="text-slate-600 dark:text-slate-400 text-sm">
+                                    Yifan Wu, Yunpeng Wang, Ying Li, Wei Tao, Siyu Yu, <span class="font-semibold text-slate-900 dark:text-white">Haowen Yang</span>, Wei Jiang, Jianguo Li
+                                </p>
+                            </div>
+                            <div class="flex gap-2 shrink-0 pt-1">
+                                <a href="https://arxiv.org/abs/2502.18904" class="text-xs font-medium px-2 py-1 rounded border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-white/5">arXiv</a>
+                            </div>
+                        </div>
+                    </div>
+
+                     <!-- Paper 3 -->
+                     <div class="glass-card p-5 rounded-xl hover:border-blue-500/30 transition-colors group">
+                        <div class="flex flex-col md:flex-row gap-4 justify-between items-start">
+                            <div class="flex-1 space-y-2">
+                                <div class="flex items-center gap-2">
+                                    <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300 border border-blue-200 dark:border-blue-800">ICSE 2025</span>
+                                </div>
+                                <h3 class="text-lg font-semibold text-slate-900 dark:text-white leading-tight group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                                    An Empirical Study on Package-Level Deprecation in Python Ecosystem
+                                </h3>
+                                <p class="text-slate-600 dark:text-slate-400 text-sm">
+                                    Zhiqing Zhong, Shilin He, Haoxuan Wang, BoXi Yu, <span class="font-semibold text-slate-900 dark:text-white">Haowen Yang</span>, Pinjia He
+                                </p>
+                            </div>
+                            <div class="flex gap-2 shrink-0 pt-1">
+                                <a href="https://arxiv.org/abs/2408.10327" class="text-xs font-medium px-2 py-1 rounded border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-white/5">arXiv</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-4 flex justify-end">
+                    <a href="#" class="text-xs font-medium text-slate-500 hover:text-primary-600 transition-colors flex items-center gap-1">
+                        View All <i data-lucide="arrow-right" class="w-3 h-3"></i>
                     </a>
                 </div>
+            </section>
 
-                <!-- Desktop Menu -->
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="#about" class="text-sm font-medium hover:text-primary-600 dark:hover:text-primary-400 transition-colors">About</a>
-                    <a href="#news" class="text-sm font-medium hover:text-primary-600 dark:hover:text-primary-400 transition-colors">News</a>
-                    <a href="#publications" class="text-sm font-medium hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Publications</a>
-                    <a href="#experience" class="text-sm font-medium hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Experience</a>
-                    
-                    <!-- Dark Mode Toggle -->
-                    <button id="theme-toggle" class="p-2 rounded-full hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors focus:outline-none">
-                        <i data-lucide="moon" class="w-5 h-5 block dark:hidden"></i>
-                        <i data-lucide="sun" class="w-5 h-5 hidden dark:block text-yellow-400"></i>
-                    </button>
-                </div>
-
-                <!-- Mobile Menu Button -->
-                <div class="flex md:hidden items-center space-x-4">
-                    <button id="theme-toggle-mobile" class="p-2 rounded-full hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
-                         <i data-lucide="moon" class="w-5 h-5 block dark:hidden"></i>
-                         <i data-lucide="sun" class="w-5 h-5 hidden dark:block text-yellow-400"></i>
-                    </button>
-                    <button id="mobile-menu-btn" class="p-2 rounded-md text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 focus:outline-none">
-                        <i data-lucide="menu" class="w-6 h-6"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Mobile Menu Panel -->
-        <div class="md:hidden hidden bg-white dark:bg-dark-card border-b border-slate-100 dark:border-slate-700 absolute w-full" id="mobile-menu">
-            <div class="px-4 pt-2 pb-4 space-y-1 shadow-lg">
-                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-primary-600">About</a>
-                <a href="#news" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-primary-600">News</a>
-                <a href="#publications" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-primary-600">Publications</a>
-                <a href="#experience" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-primary-600">Experience</a>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Main Content Wrapper -->
-    <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-20 space-y-24">
-
-        <!-- 1. Hero / About Section -->
-        <section id="about" class="fade-in-up">
-            <div class="flex flex-col md:flex-row items-start md:items-center gap-8 md:gap-12">
-                <!-- Avatar -->
-                <div class="relative group flex-shrink-0 mx-auto md:mx-0">
-                    <div class="absolute -inset-1 bg-gradient-to-r from-primary-500 to-purple-600 rounded-full blur opacity-25 group-hover:opacity-75 transition duration-500"></div>
-                    <img src="https://haowenyoung.github.io/images/profile_pic_new.png" alt="Haowen Yang" class="relative w-40 h-40 md:w-48 md:h-48 rounded-full object-cover border-4 border-white dark:border-slate-800 shadow-xl">
-                </div>
-                
-                <!-- Intro Text -->
-                <div class="text-center md:text-left flex-1">
-                    <h1 class="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white tracking-tight mb-2">
-                        Haowen Yang
-                    </h1>
-                    <p class="text-lg md:text-xl text-slate-600 dark:text-slate-400 font-medium mb-4">
-                        Ph.D. Student @ <span class="text-primary-600 dark:text-primary-400">HKUST(GZ)</span>
-                    </p>
-                    <p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
-                        I am a first-year Ph.D. student in the <a href="#" class="hover:text-primary-500 underline decoration-dotted">Data Science and Analytics Thrust</a> at HKUST(GZ), advised by <a href="#" class="font-medium text-primary-600 hover:underline">Prof. Zishuo Ding</a>. 
-                        <br class="hidden md:block">
-                        Previously, I obtained my MPhil from CUHK-Shenzhen. My research interests lie in 
-                        <span class="font-semibold text-slate-800 dark:text-slate-200 bg-slate-100 dark:bg-slate-700 px-1 py-0.5 rounded">LLM4SE</span>, 
-                        specifically LLMs for code efficiency and OSS.
-                    </p>
-                    
-                    <!-- Social Links -->
-                    <div class="flex justify-center md:justify-start gap-4">
-                        <a href="mailto:hyang464@connect.hkust-gz.edu.cn" class="flex items-center gap-2 px-4 py-2 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-lg hover:bg-slate-700 dark:hover:bg-slate-200 transition-all text-sm font-medium shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
-                            <i data-lucide="mail" class="w-4 h-4"></i> Email
-                        </a>
-                        <a href="https://github.com/haowenyoung" target="_blank" class="flex items-center gap-2 px-4 py-2 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700 rounded-lg hover:border-primary-500 dark:hover:border-primary-500 hover:text-primary-600 transition-all text-sm font-medium shadow-sm hover:shadow-md">
-                            <i data-lucide="github" class="w-4 h-4"></i> Github
-                        </a>
-                        <a href="#" class="flex items-center gap-2 px-4 py-2 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700 rounded-lg hover:border-blue-500 hover:text-blue-600 transition-all text-sm font-medium shadow-sm hover:shadow-md">
-                            <i data-lucide="graduation-cap" class="w-4 h-4"></i> Scholar
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 2. News Section -->
-        <section id="news" class="fade-in-up delay-100">
-            <h2 class="flex items-center gap-3 text-2xl font-bold text-slate-900 dark:text-white mb-8">
-                <i data-lucide="flame" class="text-orange-500"></i> News
-            </h2>
-            
-            <div class="relative pl-4 border-l-2 border-slate-200 dark:border-slate-700 space-y-8">
-                <!-- News Item -->
-                <div class="relative">
-                    <span class="absolute -left-[21px] top-1 h-4 w-4 rounded-full bg-white dark:bg-slate-900 border-2 border-primary-500"></span>
-                    <div class="flex flex-col sm:flex-row sm:items-baseline gap-2 mb-1">
-                        <span class="font-mono text-xs font-semibold text-primary-600 dark:text-primary-400 bg-primary-50 dark:bg-primary-900/30 px-2 py-0.5 rounded">2025.04</span>
-                        <span class="text-slate-700 dark:text-slate-300">One first-authored paper accepted by <strong class="text-slate-900 dark:text-white">FSE'25</strong>! 🎉</span>
-                    </div>
-                </div>
-                
-                <!-- News Item -->
-                <div class="relative">
-                    <span class="absolute -left-[21px] top-1 h-4 w-4 rounded-full bg-white dark:bg-slate-900 border-2 border-slate-300 dark:border-slate-600"></span>
-                    <div class="flex flex-col sm:flex-row sm:items-baseline gap-2 mb-1">
-                        <span class="font-mono text-xs font-semibold text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded">2024.09</span>
-                        <span class="text-slate-700 dark:text-slate-300">Served as a Reviewer for <strong class="text-slate-900 dark:text-white">TOSEM'25</strong>.</span>
-                    </div>
-                </div>
-
-                <!-- News Item -->
-                <div class="relative">
-                    <span class="absolute -left-[21px] top-1 h-4 w-4 rounded-full bg-white dark:bg-slate-900 border-2 border-slate-300 dark:border-slate-600"></span>
-                    <div class="flex flex-col sm:flex-row sm:items-baseline gap-2 mb-1">
-                        <span class="font-mono text-xs font-semibold text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded">2024.08</span>
-                        <span class="text-slate-700 dark:text-slate-300">Paper accepted by <strong class="text-slate-900 dark:text-white">ICSE'25</strong>.</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 3. Publications Section -->
-        <section id="publications" class="fade-in-up delay-200">
-            <h2 class="flex items-center gap-3 text-2xl font-bold text-slate-900 dark:text-white mb-8">
-                <i data-lucide="book-open" class="text-purple-500"></i> Selected Publications
-            </h2>
-            
-            <div class="space-y-6">
-                <!-- Paper 1 -->
-                <div class="group relative bg-white dark:bg-dark-card p-6 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700 hover:shadow-md hover:border-primary-200 dark:hover:border-primary-900 transition-all duration-300">
-                    <div class="flex justify-between items-start gap-4 mb-2">
-                        <h3 class="text-lg font-semibold text-slate-900 dark:text-white leading-tight group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
-                            Towards Understanding Performance Bugs in Popular Data Science Libraries
-                        </h3>
-                        <span class="flex-shrink-0 px-2.5 py-1 rounded text-xs font-bold bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-300 border border-purple-200 dark:border-purple-800">FSE 2025</span>
-                    </div>
-                    
-                    <div class="text-sm text-slate-600 dark:text-slate-400 mb-3">
-                        <span class="font-semibold text-slate-900 dark:text-white border-b-2 border-primary-500/30">Haowen Yang</span>, Zhengda Li, Zhiqing Zhong, Xiaoying Tang, Pinjia He
-                    </div>
-                    
-                    <div class="flex gap-3 pt-2">
-                        <a href="#" class="inline-flex items-center gap-1.5 text-xs font-medium text-slate-600 dark:text-slate-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
-                            <i data-lucide="file-text" class="w-3.5 h-3.5"></i> PDF
-                        </a>
-                        <a href="#" class="inline-flex items-center gap-1.5 text-xs font-medium text-slate-600 dark:text-slate-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
-                            <i data-lucide="code-2" class="w-3.5 h-3.5"></i> Code
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Paper 2 -->
-                <div class="group relative bg-white dark:bg-dark-card p-6 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700 hover:shadow-md hover:border-primary-200 dark:hover:border-primary-900 transition-all duration-300">
-                    <div class="flex justify-between items-start gap-4 mb-2">
-                        <h3 class="text-lg font-semibold text-slate-900 dark:text-white leading-tight group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
-                            An Empirical Study on Commit Message Generation using LLMs via In-Context Learning
-                        </h3>
-                        <span class="flex-shrink-0 px-2.5 py-1 rounded text-xs font-bold bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300 border border-blue-200 dark:border-blue-800">ICSE 2025</span>
-                    </div>
-                    
-                    <div class="text-sm text-slate-600 dark:text-slate-400 mb-3">
-                        Yifan Wu, Yunpeng Wang, Ying Li, Wei Tao, Siyu Yu, <span class="font-semibold text-slate-900 dark:text-white border-b-2 border-primary-500/30">Haowen Yang</span>, Wei Jiang, Jianguo Li
-                    </div>
-                    
-                    <div class="flex gap-3 pt-2">
-                        <a href="https://arxiv.org/abs/2502.18904" class="inline-flex items-center gap-1.5 text-xs font-medium text-slate-600 dark:text-slate-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
-                            <i data-lucide="external-link" class="w-3.5 h-3.5"></i> arXiv
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="mt-4 text-right">
-                <a href="#" class="text-sm font-medium text-primary-600 hover:text-primary-700 hover:underline">View all publications &rarr;</a>
-            </div>
-        </section>
-
-        <!-- 4. Experience & Education Grid -->
-        <section id="experience" class="fade-in-up delay-300">
-             <div class="grid md:grid-cols-2 gap-12">
-                 
-                 <!-- Education -->
-                 <div>
-                     <h2 class="flex items-center gap-3 text-2xl font-bold text-slate-900 dark:text-white mb-6">
-                        <i data-lucide="graduation-cap" class="text-green-500"></i> Education
-                    </h2>
-                    <div class="space-y-6 border-l border-slate-200 dark:border-slate-700 ml-2 pl-6">
-                        <div class="relative">
-                            <div class="absolute -left-[31px] top-1.5 h-2.5 w-2.5 rounded-full bg-slate-400 dark:bg-slate-600 ring-4 ring-white dark:ring-dark-bg"></div>
-                            <div class="font-bold text-slate-900 dark:text-white">HKUST (Guangzhou)</div>
-                            <div class="text-sm text-slate-500 dark:text-slate-400 font-mono mb-1">2025 - Present</div>
-                            <div class="text-slate-700 dark:text-slate-300 text-sm">Ph.D. in Computer Science</div>
-                        </div>
-                        <div class="relative">
-                            <div class="absolute -left-[31px] top-1.5 h-2.5 w-2.5 rounded-full bg-slate-300 dark:bg-slate-700 ring-4 ring-white dark:ring-dark-bg"></div>
-                            <div class="font-bold text-slate-900 dark:text-white">CUHK-Shenzhen</div>
-                            <div class="text-sm text-slate-500 dark:text-slate-400 font-mono mb-1">2022 - 2024</div>
-                            <div class="text-slate-700 dark:text-slate-300 text-sm">M.Phil. in CIE</div>
-                        </div>
-                        <div class="relative">
-                            <div class="absolute -left-[31px] top-1.5 h-2.5 w-2.5 rounded-full bg-slate-300 dark:bg-slate-700 ring-4 ring-white dark:ring-dark-bg"></div>
-                            <div class="font-bold text-slate-900 dark:text-white">NUAA</div>
-                            <div class="text-sm text-slate-500 dark:text-slate-400 font-mono mb-1">2018 - 2022</div>
-                            <div class="text-slate-700 dark:text-slate-300 text-sm">B.Eng. in Automation</div>
-                        </div>
-                    </div>
-                 </div>
-
-                 <!-- Internships / Service -->
-                 <div>
-                    <h2 class="flex items-center gap-3 text-2xl font-bold text-slate-900 dark:text-white mb-6">
-                        <i data-lucide="briefcase" class="text-blue-500"></i> Experience & Service
-                    </h2>
-                    <div class="space-y-4">
-                        <!-- Card -->
-                        <div class="p-4 rounded-lg bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-700">
-                            <div class="flex justify-between items-start mb-1">
-                                <div class="font-bold text-slate-900 dark:text-white">Huawei Cloud PaaS Lab</div>
-                                <span class="text-xs font-mono text-slate-500">2023.06 - 2023.09</span>
+            <!-- Experience & Education (Two Column Grid) -->
+            <section id="experience" class="delay-300">
+                <div class="grid md:grid-cols-2 gap-8 md:gap-12">
+                    <!-- Education -->
+                    <div>
+                        <h2 class="text-xl font-bold font-serif text-slate-900 dark:text-white mb-4 flex items-center gap-2">
+                            <i data-lucide="graduation-cap" class="w-5 h-5 text-slate-400"></i> Education
+                        </h2>
+                        <div class="space-y-4 pl-1">
+                            <div class="flex gap-4">
+                                <div class="flex flex-col items-center">
+                                    <div class="w-2 h-2 rounded-full bg-slate-900 dark:bg-white mt-2"></div>
+                                    <div class="w-px h-full bg-slate-200 dark:bg-slate-800 my-1"></div>
+                                </div>
+                                <div class="pb-4">
+                                    <h4 class="font-bold text-slate-900 dark:text-white">HKUST (Guangzhou)</h4>
+                                    <div class="text-xs font-mono text-slate-500 mb-0.5">2025 - Present</div>
+                                    <div class="text-sm text-slate-600 dark:text-slate-400">Ph.D. in Computer Science</div>
+                                </div>
                             </div>
-                            <div class="text-sm text-slate-600 dark:text-slate-400">Research Intern</div>
-                        </div>
-
-                        <!-- Service -->
-                        <div class="p-4 rounded-lg bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-700">
-                            <div class="font-bold text-slate-900 dark:text-white mb-2">Academic Service</div>
-                            <ul class="text-sm text-slate-600 dark:text-slate-400 space-y-1 list-disc list-inside">
-                                <li>Reviewer for <span class="font-medium text-slate-900 dark:text-white">TOSEM</span></li>
-                                <li>External Reviewer for <span class="font-medium text-slate-900 dark:text-white">ICSE 2025, ISSRE 2024</span></li>
-                            </ul>
+                            <div class="flex gap-4">
+                                <div class="flex flex-col items-center">
+                                    <div class="w-2 h-2 rounded-full bg-slate-300 dark:bg-slate-600 mt-2"></div>
+                                    <div class="w-px h-full bg-slate-200 dark:bg-slate-800 my-1"></div>
+                                </div>
+                                <div class="pb-4">
+                                    <h4 class="font-bold text-slate-900 dark:text-white">CUHK-Shenzhen</h4>
+                                    <div class="text-xs font-mono text-slate-500 mb-0.5">2022 - 2024</div>
+                                    <div class="text-sm text-slate-600 dark:text-slate-400">M.Phil. in Computer & Info Eng</div>
+                                </div>
+                            </div>
+                            <div class="flex gap-4">
+                                <div class="flex flex-col items-center">
+                                    <div class="w-2 h-2 rounded-full bg-slate-300 dark:bg-slate-600 mt-2"></div>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-900 dark:text-white">NUAA</h4>
+                                    <div class="text-xs font-mono text-slate-500 mb-0.5">2018 - 2022</div>
+                                    <div class="text-sm text-slate-600 dark:text-slate-400">B.Eng. in Automation</div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                 </div>
 
-             </div>
-        </section>
-        
-        <footer class="text-center text-sm text-slate-400 dark:text-slate-600 py-8 border-t border-slate-100 dark:border-slate-800">
-            <p>&copy; 2025 Haowen Yang. Built with Tailwind CSS.</p>
-        </footer>
+                    <!-- Experience & Service -->
+                    <div>
+                         <h2 class="text-xl font-bold font-serif text-slate-900 dark:text-white mb-4 flex items-center gap-2">
+                            <i data-lucide="briefcase" class="w-5 h-5 text-slate-400"></i> Experience
+                        </h2>
 
-    </main>
+                        <div class="space-y-4">
+                            <div class="glass-card p-4 rounded-xl border-l-2 border-l-blue-500">
+                                <div class="flex justify-between items-baseline mb-1">
+                                    <h4 class="font-bold text-sm text-slate-900 dark:text-white">Huawei Cloud PaaS Lab</h4>
+                                    <span class="text-[10px] font-mono text-slate-500">2023.06 - 2023.09</span>
+                                </div>
+                                <div class="text-xs font-medium text-blue-600 dark:text-blue-400 mb-1">Research Intern</div>
+                                <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+                                    Optimization of large-scale cloud systems.
+                                </p>
+                            </div>
 
-    <!-- Script for Mobile Menu & Dark Mode -->
+                            <div class="glass-card p-4 rounded-xl">
+                                <h4 class="font-bold text-sm text-slate-900 dark:text-white mb-2">Academic Service</h4>
+                                <ul class="space-y-2 text-xs">
+                                    <li class="flex gap-2">
+                                        <span class="text-slate-400">•</span>
+                                        <span>Reviewer: <span class="text-slate-900 dark:text-white font-medium">TOSEM</span></span>
+                                    </li>
+                                    <li class="flex gap-2">
+                                        <span class="text-slate-400">•</span>
+                                        <span>External Reviewer: <span class="text-slate-900 dark:text-white font-medium">ICSE '25, ISSRE '24</span></span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <footer class="flex flex-col items-center gap-2 text-xs text-slate-400 dark:text-slate-600 py-8 border-t border-slate-200 dark:border-white/5">
+                <p>&copy; 2025 Haowen Yang.</p>
+            </footer>
+
+        </main>
+    </div>
+
+    <!-- Scripts -->
     <script>
-        // Initialize Icons
         lucide.createIcons();
 
-        // Dark Mode Logic
         const themeToggleBtn = document.getElementById('theme-toggle');
-        const themeToggleMobileBtn = document.getElementById('theme-toggle-mobile');
+        const html = document.documentElement;
         
-        function toggleTheme() {
-            if (document.documentElement.classList.contains('dark')) {
-                document.documentElement.classList.remove('dark');
-                localStorage.setItem('theme', 'light');
-            } else {
-                document.documentElement.classList.add('dark');
-                localStorage.setItem('theme', 'dark');
-            }
-        }
-
-        // Check Local Storage or System Preference
+        // Initialize Dark/Light Mode
         if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-            document.documentElement.classList.add('dark');
+            html.classList.add('dark');
         } else {
-            document.documentElement.classList.remove('dark');
+            html.classList.remove('dark');
         }
 
-        themeToggleBtn.addEventListener('click', toggleTheme);
-        themeToggleMobileBtn.addEventListener('click', toggleTheme);
+        themeToggleBtn.addEventListener('click', () => {
+            html.classList.toggle('dark');
+            localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+        });
 
-        // Mobile Menu Logic
-        const btn = document.getElementById('mobile-menu-btn');
-        const menu = document.getElementById('mobile-menu');
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('flex');
+        });
 
-        btn.addEventListener('click', () => {
-            menu.classList.toggle('hidden');
+        // Mouse Follow Glow
+        const cursorGlow = document.getElementById('cursor-glow');
+        let mouseX = 0, mouseY = 0, currentX = 0, currentY = 0;
+        document.addEventListener('mousemove', (e) => { mouseX = e.clientX; mouseY = e.clientY; });
+        function animateGlow() {
+            currentX += (mouseX - currentX) * 0.1;
+            currentY += (mouseY - currentY) * 0.1;
+            cursorGlow.style.transform = `translate(${currentX}px, ${currentY}px) translate(-50%, -50%)`;
+            requestAnimationFrame(animateGlow);
+        }
+        animateGlow();
+
+        // --- LOADING SCREEN LOGIC ---
+        window.addEventListener('load', () => {
+            const mottoText = "Life can only be understood backwards; but it must be lived forwards.";
+            const textElement = document.getElementById('motto-text');
+            const progressBar = document.getElementById('progress-bar');
+            const loader = document.getElementById('loader');
+            const mainWrapper = document.getElementById('main-wrapper');
+            let i = 0;
+
+            // 1. Start Progress Bar (Slowed down to 7s)
+            setTimeout(() => {
+                progressBar.style.width = '100%';
+            }, 100);
+
+            // 2. Typewriter Effect
+            function typeWriter() {
+                if (i < mottoText.length) {
+                    textElement.innerHTML += mottoText.charAt(i);
+                    i++;
+                    setTimeout(typeWriter, 100); // Increased to 100ms for deliberate slowness
+                } else {
+                    // 3. Fade Out Loader & Fade In Content
+                    setTimeout(() => {
+                        loader.classList.add('loader-hidden');
+                        // Trigger content fade-in
+                        mainWrapper.classList.add('page-content-visible');
+                    }, 800);
+                }
+            }
+            
+            typeWriter();
         });
     </script>
 </body>

@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: Ph.D. Candidate, School of Data Science, CUHK-Shenzhen
+subtitle: Ph.D. Candidate > , School of Data Science, CUHK-Shenzhen
 
 profile:
   align: right

@@ -17,7 +17,7 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
-Haowen Yang is a first year PhD student from [Data Science and Analytics Thrust](https://dsa.hkust-gz.edu.cn/), [Information Hub](https://www.hkust-gz.edu.cn/academics/hubs-and-thrust-areas/information-hub/), [HKUST (Guangzhou)](https://www.hkust-gz.edu.cn/).
+Zhiqing Zhong is a third-year Ph.D. candidate at [School of Data Science](https://sds.cuhk.edu.cn/en), [The Chinese University of Hong Kong, Shenzhen (CUHK-Shenzhen)](https://www.cuhk.edu.cn/en).
 He is fortunate to be advised by [Prof. Zishuo Ding](https://personal.hkust-gz.edu.cn/ding/). 
 Previously, he earned his MPhil from [CUHK-Shenzhen](https://www.cuhk.edu.cn/en) where he was fortunate to be advised by [Prof. Pinjia He](https://pinjiahe.github.io/) at the [School of Data Science](https://cs.pku.edu.cn/). Before joining CUHK-Shenzhen, he received his BEng degree from the [College of Automation Engineering](https://cae.nuaa.edu.cn/zdh_en/) at [Nanjing University of Aeronautics and Astronatics (NUAA)](https://www.nuaa.edu.cn/) in 2022.
 

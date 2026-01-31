@@ -3,15 +3,16 @@ layout: null
 ---
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Haowen Yang | PhD Student</title>
-    <meta name="description" content="Personal Homepage of Haowen Yang, Ph.D. student at HKUST(GZ)">
-    
+    <title>Zhiqing Zhong | PhD Candidate</title>
+    <meta name="description" content="Personal Homepage of Zhiqing Zhong, Ph.D. candidate at CUHK-Shenzhen">
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <!-- Tailwind Config -->
     <script>
         tailwind.config = {
@@ -58,7 +59,9 @@ layout: null
     <!-- Fonts & Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:wght@400;600;700;800&display=swap"
+        rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
 
     <style>
@@ -66,7 +69,10 @@ layout: null
         body {
             cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'><path d='M3 3L10.5 20.5L13.5 13.5L20.5 10.5L3 3Z' fill='%230f172a' stroke='%230ea5e9' stroke-width='1.5' stroke-linejoin='round'/></svg>") 2 2, auto;
         }
-        a:hover, button:hover, .cursor-pointer {
+
+        a:hover,
+        button:hover,
+        .cursor-pointer {
             cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'><path d='M3 3L10.5 20.5L13.5 13.5L20.5 10.5L3 3Z' fill='%230f172a' stroke='%23d946ef' stroke-width='1.5' stroke-linejoin='round'/></svg>") 2 2, pointer;
         }
 
@@ -77,6 +83,7 @@ layout: null
             -webkit-backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 255, 255, 0.6);
         }
+
         .dark .glass-card {
             background: rgba(20, 20, 30, 0.4);
             backdrop-filter: blur(12px);
@@ -93,7 +100,10 @@ layout: null
 
         #cursor-glow {
             position: fixed;
-            top: 0; left: 0; width: 500px; height: 500px;
+            top: 0;
+            left: 0;
+            width: 500px;
+            height: 500px;
             background: radial-gradient(circle, rgba(14, 165, 233, 0.1) 0%, rgba(139, 92, 246, 0.05) 40%, rgba(0, 0, 0, 0) 70%);
             border-radius: 50%;
             pointer-events: none;
@@ -108,26 +118,48 @@ layout: null
             opacity: 0;
             transform: translateY(20px);
         }
-        .delay-100 { animation-delay: 0.1s; }
-        .delay-200 { animation-delay: 0.2s; }
-        .delay-300 { animation-delay: 0.3s; }
 
-        @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
+        .delay-100 {
+            animation-delay: 0.1s;
+        }
+
+        .delay-200 {
+            animation-delay: 0.2s;
+        }
+
+        .delay-300 {
+            animation-delay: 0.3s;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
         /* --- LOADING SCREEN ANIMATIONS --- */
         #loader {
-            transition: opacity 1s ease-out, visibility 1s; /* 延长淡出时间 */
+            transition: opacity 1s ease-out, visibility 1s;
+            /* 延长淡出时间 */
         }
+
         .loader-hidden {
             opacity: 0;
             visibility: hidden;
             pointer-events: none;
         }
+
         .typing-cursor::after {
             content: '|';
             animation: blink 1s step-start infinite;
         }
-        @keyframes blink { 50% { opacity: 0; } }
+
+        @keyframes blink {
+            50% {
+                opacity: 0;
+            }
+        }
 
         /* --- HOMEPAGE REVEAL ANIMATION --- */
         /* 初始隐藏主页内容 */
@@ -136,6 +168,7 @@ layout: null
             transform: translateY(20px);
             transition: opacity 1.5s ease-out, transform 1.5s cubic-bezier(0.2, 1, 0.3, 1);
         }
+
         /* 加载完成后添加此class */
         .page-content-visible {
             opacity: 1;
@@ -143,17 +176,21 @@ layout: null
         }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-800 font-sans transition-colors duration-500 dark:bg-[#09090b] dark:text-slate-300 antialiased relative overflow-x-hidden selection:bg-cyan-500 selection:text-white">
+
+<body
+    class="bg-slate-50 text-slate-800 font-sans transition-colors duration-500 dark:bg-[#09090b] dark:text-slate-300 antialiased relative overflow-x-hidden selection:bg-cyan-500 selection:text-white">
 
     <!-- LOADING SCREEN -->
-    <div id="loader" class="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-slate-50 dark:bg-[#09090b]">
+    <div id="loader"
+        class="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-slate-50 dark:bg-[#09090b]">
         <div class="max-w-2xl px-6 text-center">
             <p class="font-serif text-2xl md:text-4xl text-slate-800 dark:text-slate-100 italic leading-relaxed">
                 "<span id="motto-text"></span><span class="typing-cursor text-primary-500"></span>"
             </p>
             <!-- Progress bar duration matched to longer typing time -->
             <div class="mt-8 h-1 w-24 bg-slate-200 dark:bg-slate-800 mx-auto rounded-full overflow-hidden">
-                <div class="h-full bg-primary-500 w-0 transition-all duration-[7000ms] ease-out" id="progress-bar"></div>
+                <div class="h-full bg-primary-500 w-0 transition-all duration-[7000ms] ease-out" id="progress-bar">
+                </div>
             </div>
         </div>
     </div>
@@ -162,41 +199,56 @@ layout: null
 
     <!-- 静态背景 -->
     <div class="fixed inset-0 -z-20 overflow-hidden pointer-events-none">
-        <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-indigo-100/40 dark:bg-indigo-900/10 rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-[120px] opacity-50 animate-blob"></div>
-        <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-sky-100/40 dark:bg-sky-900/10 rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-[120px] opacity-50 animate-blob animation-delay-2000"></div>
+        <div
+            class="absolute top-0 right-0 w-[600px] h-[600px] bg-indigo-100/40 dark:bg-indigo-900/10 rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-[120px] opacity-50 animate-blob">
+        </div>
+        <div
+            class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-sky-100/40 dark:bg-sky-900/10 rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-[120px] opacity-50 animate-blob animation-delay-2000">
+        </div>
     </div>
 
     <!-- Navigation and Main Content wrapped for fade-in -->
     <div id="main-wrapper" class="page-content">
         <!-- 导航栏 -->
         <nav class="fixed w-full top-4 z-50 px-4">
-            <div class="glass-card max-w-4xl mx-auto rounded-full px-6 py-2.5 flex justify-between items-center shadow-sm transition-all duration-300">
-                <a href="#" class="text-lg font-bold tracking-tight font-serif text-slate-900 dark:text-white hover:opacity-80 transition-opacity">
-                    Haowen<span class="text-primary-500 font-sans">.Yang</span>
+            <div
+                class="glass-card max-w-4xl mx-auto rounded-full px-6 py-2.5 flex justify-between items-center shadow-sm transition-all duration-300">
+                <a href="#"
+                    class="text-lg font-bold tracking-tight font-serif text-slate-900 dark:text-white hover:opacity-80 transition-opacity">
+                    Zhiqing<span class="text-primary-500 font-sans">.Zhong</span>
                 </a>
 
                 <div class="hidden md:flex items-center space-x-2">
-                    <a href="#about" class="px-3 py-1.5 text-sm font-medium rounded-md text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-white/5 hover:text-primary-600 dark:hover:text-white transition-all">About</a>
-                    <a href="#news" class="px-3 py-1.5 text-sm font-medium rounded-md text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-white/5 hover:text-primary-600 dark:hover:text-white transition-all">News</a>
-                    <a href="#publications" class="px-3 py-1.5 text-sm font-medium rounded-md text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-white/5 hover:text-primary-600 dark:hover:text-white transition-all">Publications</a>
-                    <a href="#experience" class="px-3 py-1.5 text-sm font-medium rounded-md text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-white/5 hover:text-primary-600 dark:hover:text-white transition-all">Experience</a>
+                    <a href="#about"
+                        class="px-3 py-1.5 text-sm font-medium rounded-md text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-white/5 hover:text-primary-600 dark:hover:text-white transition-all">About</a>
+                    <a href="#news"
+                        class="px-3 py-1.5 text-sm font-medium rounded-md text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-white/5 hover:text-primary-600 dark:hover:text-white transition-all">News</a>
+                    <a href="#publications"
+                        class="px-3 py-1.5 text-sm font-medium rounded-md text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-white/5 hover:text-primary-600 dark:hover:text-white transition-all">Publications</a>
+                    <a href="#experience"
+                        class="px-3 py-1.5 text-sm font-medium rounded-md text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-white/5 hover:text-primary-600 dark:hover:text-white transition-all">Experience</a>
                 </div>
 
                 <div class="flex items-center gap-3">
-                    <button id="theme-toggle" class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-white/10 transition-colors text-slate-600 dark:text-slate-300 focus:outline-none">
+                    <button id="theme-toggle"
+                        class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-white/10 transition-colors text-slate-600 dark:text-slate-300 focus:outline-none">
                         <i data-lucide="moon" class="w-4 h-4 block dark:hidden"></i>
                         <i data-lucide="sun" class="w-4 h-4 hidden dark:block text-yellow-400"></i>
                     </button>
-                    <button id="mobile-menu-btn" class="md:hidden p-2 rounded-full hover:bg-slate-100 dark:hover:bg-white/10 transition-colors text-slate-600 dark:text-slate-300">
+                    <button id="mobile-menu-btn"
+                        class="md:hidden p-2 rounded-full hover:bg-slate-100 dark:hover:bg-white/10 transition-colors text-slate-600 dark:text-slate-300">
                         <i data-lucide="menu" class="w-5 h-5"></i>
                     </button>
                 </div>
             </div>
-            <div id="mobile-menu" class="hidden absolute top-16 left-4 right-4 glass-card rounded-xl p-4 space-y-1 md:hidden flex-col shadow-lg z-50">
-                 <a href="#about" class="block px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-white/5">About</a>
-                 <a href="#news" class="block px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-white/5">News</a>
-                 <a href="#publications" class="block px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-white/5">Publications</a>
-                 <a href="#experience" class="block px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-white/5">Experience</a>
+            <div id="mobile-menu"
+                class="hidden absolute top-16 left-4 right-4 glass-card rounded-xl p-4 space-y-1 md:hidden flex-col shadow-lg z-50">
+                <a href="#about" class="block px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-white/5">About</a>
+                <a href="#news" class="block px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-white/5">News</a>
+                <a href="#publications"
+                    class="block px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-white/5">Publications</a>
+                <a href="#experience"
+                    class="block px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-white/5">Experience</a>
             </div>
         </nav>
 
@@ -207,18 +259,22 @@ layout: null
             <section id="about" class="relative">
                 <div class="flex flex-col-reverse md:flex-row items-center md:items-start gap-8 md:gap-12">
                     <div class="flex-1 text-center md:text-left z-10">
-                        <div class="inline-flex items-center gap-2 px-3 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 text-xs font-medium mb-4">
+                        <div
+                            class="inline-flex items-center gap-2 px-3 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 text-xs font-medium mb-4">
                             <span class="relative flex h-2 w-2">
-                              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                              <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                                <span
+                                    class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                                <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
                             </span>
                             Open for Collaborations
                         </div>
 
-                        <h1 class="text-4xl md:text-6xl font-bold font-serif tracking-tight mb-2 leading-tight text-slate-900 dark:text-white">
-                            Haowen <span class="text-transparent bg-clip-text bg-gradient-to-r from-slate-800 to-slate-500 dark:from-slate-100 dark:to-slate-400">Yang</span>
+                        <h1
+                            class="text-4xl md:text-6xl font-bold font-serif tracking-tight mb-2 leading-tight text-slate-900 dark:text-white">
+                            Zhiqing <span
+                                class="text-transparent bg-clip-text bg-gradient-to-r from-slate-800 to-slate-500 dark:from-slate-100 dark:to-slate-400">Zhong</span>
                         </h1>
-                        
+
                         <!-- Motto Section (Visibly Placed) -->
                         <div class="mb-6 pl-4 border-l-2 border-primary-500/30">
                             <p class="font-serif italic text-lg md:text-xl text-slate-700 dark:text-slate-300">
@@ -227,34 +283,46 @@ layout: null
                         </div>
 
                         <!-- Detailed Bio Section -->
-                        <div class="text-lg text-slate-600 dark:text-slate-400 font-light leading-relaxed mb-8 max-w-2xl space-y-4">
+                        <div
+                            class="text-lg text-slate-600 dark:text-slate-400 font-light leading-relaxed mb-8 max-w-2xl space-y-4">
                             <p>
-                                I am a first-year Ph.D. student in the Data Science and Analytics Thrust at <span class="font-semibold text-slate-900 dark:text-white">HKUST (Guangzhou)</span>, where I am fortunate to be advised by <a href="https://personal.hkust-gz.edu.cn/ding/" target="_blank" class="font-medium text-slate-900 dark:text-white underline decoration-slate-300 dark:decoration-slate-600 underline-offset-4 hover:decoration-primary-500 transition-all">Prof. Zishuo Ding</a>.
+                                I am a third-year Ph.D. candidate in Computer Science at the <span
+                                    class="text-slate-900 dark:text-white">School of Data Science,</span>
+                                <span class="text-slate-900 dark:text-white">The Chinese University of
+                                    Hong Kong, Shenzhen (CUHK-Shenzhen)</span>, where
+                                I am fortunate to be advised by <a href="https://pinjiahe.github.io/" target="_blank"
+                                    class="font-medium text-slate-900 dark:text-white underline decoration-slate-300 dark:decoration-slate-600 underline-offset-4 hover:decoration-primary-500 transition-all">Prof.
+                                    Pinjia He</a>.
+                                Before joining CUHK-Shenzhen, I received my B.Eng. degree from School of Physics and
+                                Optoelectronics, South China University of Technology in 2023.
                             </p>
                             <p>
-                                Previously, I earned my M.Phil. degree from <span class="font-semibold text-slate-900 dark:text-white">CUHK-Shenzhen</span>, advised by <a href="https://pinjiahe.github.io/" target="_blank" class="font-medium text-slate-900 dark:text-white underline decoration-slate-300 dark:decoration-slate-600 underline-offset-4 hover:decoration-primary-500 transition-all">Prof. Pinjia He</a>. Before that, I received my B.Eng. degree from <span class="font-semibold text-slate-900 dark:text-white">NUAA</span> in 2022.
-                            </p>
-                            <p>
-                                My current research interests lie in <span class="text-primary-600 dark:text-primary-400 font-medium">LLM4SE</span>, particularly leveraging LLMs for code efficiency and OSS.
+                                My current research interests lie in <span
+                                    class="text-primary-600 dark:text-primary-400 font-medium">LLM4SE</span>,
+                                particularly leveraging LLMs for code efficiency and OSS.
                             </p>
                         </div>
-                        
+
                         <div class="flex flex-wrap justify-center md:justify-start gap-3">
-                            <a href="mailto:hyang464@connect.hkust-gz.edu.cn" class="px-5 py-2 rounded-lg bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 text-sm font-medium hover:opacity-90 transition-all flex items-center gap-2">
+                            <a href="mailto:zhiqingzhong@link.cuhk.edu.cn"
+                                class="px-5 py-2 rounded-lg bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 text-sm font-medium hover:opacity-90 transition-all flex items-center gap-2">
                                 <i data-lucide="mail" class="w-4 h-4"></i> Email
                             </a>
-                            <a href="https://github.com/haowenyoung" target="_blank" class="px-5 py-2 rounded-lg border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 text-sm font-medium hover:border-primary-500 hover:text-primary-500 transition-all flex items-center gap-2">
+                            <a href="https://github.com/coxhin" target="_blank"
+                                class="px-5 py-2 rounded-lg border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 text-sm font-medium hover:border-primary-500 hover:text-primary-500 transition-all flex items-center gap-2">
                                 <i data-lucide="github" class="w-4 h-4"></i> Github
                             </a>
-                            <a href="#" class="px-5 py-2 rounded-lg border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 text-sm font-medium hover:border-blue-500 hover:text-blue-500 transition-all flex items-center gap-2">
+                            <a href="#"
+                                class="px-5 py-2 rounded-lg border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 text-sm font-medium hover:border-blue-500 hover:text-blue-500 transition-all flex items-center gap-2">
                                 <i data-lucide="graduation-cap" class="w-4 h-4"></i> Scholar
                             </a>
                         </div>
                     </div>
-                    
+
                     <div class="relative shrink-0 animate-float">
                         <div class="w-40 h-40 md:w-52 md:h-52 rounded-full p-1 glass-card shadow-2xl">
-                            <img src="https://haowenyoung.github.io/images/profile_pic_new.png" alt="Haowen Yang" class="w-full h-full rounded-full object-cover">
+                            <img src="https://coxhin.github.io/images/profile_pic_new.png" alt="Zhiqing Zhong"
+                                class="w-full h-full rounded-full object-cover">
                         </div>
                     </div>
                 </div>
@@ -265,25 +333,32 @@ layout: null
                 <h2 class="text-2xl font-bold font-serif text-slate-900 dark:text-white mb-6 flex items-center gap-2">
                     News <span class="h-px flex-1 bg-slate-200 dark:bg-slate-800 ml-4"></span>
                 </h2>
-                
+
                 <div class="glass-card rounded-2xl p-1">
                     <div class="divide-y divide-slate-100 dark:divide-slate-800/50">
-                        <div class="p-4 flex flex-col sm:flex-row gap-2 sm:gap-6 sm:items-baseline hover:bg-slate-50/50 dark:hover:bg-white/5 transition-colors rounded-t-xl">
-                            <span class="font-mono text-xs font-bold text-primary-600 dark:text-primary-400 shrink-0 w-20">2025.04</span>
+                        <div
+                            class="p-4 flex flex-col sm:flex-row gap-2 sm:gap-6 sm:items-baseline hover:bg-slate-50/50 dark:hover:bg-white/5 transition-colors rounded-t-xl">
+                            <span
+                                class="font-mono text-xs font-bold text-primary-600 dark:text-primary-400 shrink-0 w-20">2025.04</span>
                             <p class="text-sm text-slate-700 dark:text-slate-300">
-                                🎉 First-authored paper accepted by <strong class="font-semibold text-slate-900 dark:text-white">FSE'25</strong>.
+                                🎉 First-authored paper accepted by <strong
+                                    class="font-semibold text-slate-900 dark:text-white">FSE'25</strong>.
                             </p>
                         </div>
-                        <div class="p-4 flex flex-col sm:flex-row gap-2 sm:gap-6 sm:items-baseline hover:bg-slate-50/50 dark:hover:bg-white/5 transition-colors">
+                        <div
+                            class="p-4 flex flex-col sm:flex-row gap-2 sm:gap-6 sm:items-baseline hover:bg-slate-50/50 dark:hover:bg-white/5 transition-colors">
                             <span class="font-mono text-xs font-bold text-slate-500 shrink-0 w-20">2024.09</span>
                             <p class="text-sm text-slate-700 dark:text-slate-300">
-                                Served as a Reviewer for <strong class="font-semibold text-slate-900 dark:text-white">TOSEM'25</strong>.
+                                Served as a Reviewer for <strong
+                                    class="font-semibold text-slate-900 dark:text-white">TOSEM'25</strong>.
                             </p>
                         </div>
-                        <div class="p-4 flex flex-col sm:flex-row gap-2 sm:gap-6 sm:items-baseline hover:bg-slate-50/50 dark:hover:bg-white/5 transition-colors rounded-b-xl">
+                        <div
+                            class="p-4 flex flex-col sm:flex-row gap-2 sm:gap-6 sm:items-baseline hover:bg-slate-50/50 dark:hover:bg-white/5 transition-colors rounded-b-xl">
                             <span class="font-mono text-xs font-bold text-slate-500 shrink-0 w-20">2024.08</span>
                             <p class="text-sm text-slate-700 dark:text-slate-300">
-                                Paper accepted by <strong class="font-semibold text-slate-900 dark:text-white">ICSE'25</strong>.
+                                Paper accepted by <strong
+                                    class="font-semibold text-slate-900 dark:text-white">ICSE'25</strong>.
                             </p>
                         </div>
                     </div>
@@ -295,25 +370,31 @@ layout: null
                 <h2 class="text-2xl font-bold font-serif text-slate-900 dark:text-white mb-6 flex items-center gap-2">
                     Selected Publications <span class="h-px flex-1 bg-slate-200 dark:bg-slate-800 ml-4"></span>
                 </h2>
-                
+
                 <div class="space-y-4">
                     <!-- Paper 1 -->
                     <div class="glass-card p-5 rounded-xl hover:border-primary-500/30 transition-colors group">
                         <div class="flex flex-col md:flex-row gap-4 justify-between items-start">
                             <div class="flex-1 space-y-2">
                                 <div class="flex items-center gap-2">
-                                    <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-300 border border-purple-200 dark:border-purple-800">FSE 2025</span>
+                                    <span
+                                        class="px-2 py-0.5 rounded text-[10px] font-bold bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-300 border border-purple-200 dark:border-purple-800">FSE
+                                        2025</span>
                                 </div>
-                                <h3 class="text-lg font-semibold text-slate-900 dark:text-white leading-tight group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
+                                <h3
+                                    class="text-lg font-semibold text-slate-900 dark:text-white leading-tight group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
                                     Towards Understanding Performance Bugs in Popular Data Science Libraries
                                 </h3>
                                 <p class="text-slate-600 dark:text-slate-400 text-sm">
-                                    <span class="font-semibold text-slate-900 dark:text-white">Haowen Yang</span>, Zhengda Li, Zhiqing Zhong, Xiaoying Tang, Pinjia He
+                                    <span class="font-semibold text-slate-900 dark:text-white">Haowen Yang</span>,
+                                    Zhengda Li, Zhiqing Zhong, Xiaoying Tang, Pinjia He
                                 </p>
                             </div>
                             <div class="flex gap-2 shrink-0 pt-1">
-                                <a href="#" class="text-xs font-medium px-2 py-1 rounded border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-white/5">PDF</a>
-                                <a href="#" class="text-xs font-medium px-2 py-1 rounded border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-white/5">Code</a>
+                                <a href="#"
+                                    class="text-xs font-medium px-2 py-1 rounded border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-white/5">PDF</a>
+                                <a href="#"
+                                    class="text-xs font-medium px-2 py-1 rounded border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-white/5">Code</a>
                             </div>
                         </div>
                     </div>
@@ -323,44 +404,57 @@ layout: null
                         <div class="flex flex-col md:flex-row gap-4 justify-between items-start">
                             <div class="flex-1 space-y-2">
                                 <div class="flex items-center gap-2">
-                                    <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300 border border-blue-200 dark:border-blue-800">ICSE 2025</span>
+                                    <span
+                                        class="px-2 py-0.5 rounded text-[10px] font-bold bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300 border border-blue-200 dark:border-blue-800">ICSE
+                                        2025</span>
                                 </div>
-                                <h3 class="text-lg font-semibold text-slate-900 dark:text-white leading-tight group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                                <h3
+                                    class="text-lg font-semibold text-slate-900 dark:text-white leading-tight group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                                     An Empirical Study on Commit Message Generation using LLMs via In-Context Learning
                                 </h3>
                                 <p class="text-slate-600 dark:text-slate-400 text-sm">
-                                    Yifan Wu, Yunpeng Wang, Ying Li, Wei Tao, Siyu Yu, <span class="font-semibold text-slate-900 dark:text-white">Haowen Yang</span>, Wei Jiang, Jianguo Li
+                                    Yifan Wu, Yunpeng Wang, Ying Li, Wei Tao, Siyu Yu, <span
+                                        class="font-semibold text-slate-900 dark:text-white">Haowen Yang</span>, Wei
+                                    Jiang, Jianguo Li
                                 </p>
                             </div>
                             <div class="flex gap-2 shrink-0 pt-1">
-                                <a href="https://arxiv.org/abs/2502.18904" class="text-xs font-medium px-2 py-1 rounded border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-white/5">arXiv</a>
+                                <a href="https://arxiv.org/abs/2502.18904"
+                                    class="text-xs font-medium px-2 py-1 rounded border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-white/5">arXiv</a>
                             </div>
                         </div>
                     </div>
 
-                     <!-- Paper 3 -->
-                     <div class="glass-card p-5 rounded-xl hover:border-blue-500/30 transition-colors group">
+                    <!-- Paper 3 -->
+                    <div class="glass-card p-5 rounded-xl hover:border-blue-500/30 transition-colors group">
                         <div class="flex flex-col md:flex-row gap-4 justify-between items-start">
                             <div class="flex-1 space-y-2">
                                 <div class="flex items-center gap-2">
-                                    <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300 border border-blue-200 dark:border-blue-800">ICSE 2025</span>
+                                    <span
+                                        class="px-2 py-0.5 rounded text-[10px] font-bold bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300 border border-blue-200 dark:border-blue-800">ICSE
+                                        2025</span>
                                 </div>
-                                <h3 class="text-lg font-semibold text-slate-900 dark:text-white leading-tight group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                                <h3
+                                    class="text-lg font-semibold text-slate-900 dark:text-white leading-tight group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                                     An Empirical Study on Package-Level Deprecation in Python Ecosystem
                                 </h3>
                                 <p class="text-slate-600 dark:text-slate-400 text-sm">
-                                    Zhiqing Zhong, Shilin He, Haoxuan Wang, BoXi Yu, <span class="font-semibold text-slate-900 dark:text-white">Haowen Yang</span>, Pinjia He
+                                    Zhiqing Zhong, Shilin He, Haoxuan Wang, BoXi Yu, <span
+                                        class="font-semibold text-slate-900 dark:text-white">Haowen Yang</span>, Pinjia
+                                    He
                                 </p>
                             </div>
                             <div class="flex gap-2 shrink-0 pt-1">
-                                <a href="https://arxiv.org/abs/2408.10327" class="text-xs font-medium px-2 py-1 rounded border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-white/5">arXiv</a>
+                                <a href="https://arxiv.org/abs/2408.10327"
+                                    class="text-xs font-medium px-2 py-1 rounded border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-white/5">arXiv</a>
                             </div>
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="mt-4 flex justify-end">
-                    <a href="#" class="text-xs font-medium text-slate-500 hover:text-primary-600 transition-colors flex items-center gap-1">
+                    <a href="#"
+                        class="text-xs font-medium text-slate-500 hover:text-primary-600 transition-colors flex items-center gap-1">
                         View All <i data-lucide="arrow-right" class="w-3 h-3"></i>
                     </a>
                 </div>
@@ -371,7 +465,8 @@ layout: null
                 <div class="grid md:grid-cols-2 gap-8 md:gap-12">
                     <!-- Education -->
                     <div>
-                        <h2 class="text-xl font-bold font-serif text-slate-900 dark:text-white mb-4 flex items-center gap-2">
+                        <h2
+                            class="text-xl font-bold font-serif text-slate-900 dark:text-white mb-4 flex items-center gap-2">
                             <i data-lucide="graduation-cap" class="w-5 h-5 text-slate-400"></i> Education
                         </h2>
                         <div class="space-y-4 pl-1">
@@ -383,7 +478,8 @@ layout: null
                                 <div class="pb-4">
                                     <h4 class="font-bold text-slate-900 dark:text-white">HKUST (Guangzhou)</h4>
                                     <div class="text-xs font-mono text-slate-500 mb-0.5">2025 - Present</div>
-                                    <div class="text-sm text-slate-600 dark:text-slate-400">Ph.D. in Computer Science</div>
+                                    <div class="text-sm text-slate-600 dark:text-slate-400">Ph.D. in Computer Science
+                                    </div>
                                 </div>
                             </div>
                             <div class="flex gap-4">
@@ -394,7 +490,8 @@ layout: null
                                 <div class="pb-4">
                                     <h4 class="font-bold text-slate-900 dark:text-white">CUHK-Shenzhen</h4>
                                     <div class="text-xs font-mono text-slate-500 mb-0.5">2022 - 2024</div>
-                                    <div class="text-sm text-slate-600 dark:text-slate-400">M.Phil. in Computer & Info Eng</div>
+                                    <div class="text-sm text-slate-600 dark:text-slate-400">M.Phil. in Computer & Info
+                                        Eng</div>
                                 </div>
                             </div>
                             <div class="flex gap-4">
@@ -412,17 +509,20 @@ layout: null
 
                     <!-- Experience & Service -->
                     <div>
-                         <h2 class="text-xl font-bold font-serif text-slate-900 dark:text-white mb-4 flex items-center gap-2">
+                        <h2
+                            class="text-xl font-bold font-serif text-slate-900 dark:text-white mb-4 flex items-center gap-2">
                             <i data-lucide="briefcase" class="w-5 h-5 text-slate-400"></i> Experience
                         </h2>
 
                         <div class="space-y-4">
                             <div class="glass-card p-4 rounded-xl border-l-2 border-l-blue-500">
                                 <div class="flex justify-between items-baseline mb-1">
-                                    <h4 class="font-bold text-sm text-slate-900 dark:text-white">Huawei Cloud PaaS Lab</h4>
+                                    <h4 class="font-bold text-sm text-slate-900 dark:text-white">Huawei Cloud PaaS Lab
+                                    </h4>
                                     <span class="text-[10px] font-mono text-slate-500">2023.06 - 2023.09</span>
                                 </div>
-                                <div class="text-xs font-medium text-blue-600 dark:text-blue-400 mb-1">Research Intern</div>
+                                <div class="text-xs font-medium text-blue-600 dark:text-blue-400 mb-1">Research Intern
+                                </div>
                                 <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
                                     Optimization of large-scale cloud systems.
                                 </p>
@@ -433,11 +533,14 @@ layout: null
                                 <ul class="space-y-2 text-xs">
                                     <li class="flex gap-2">
                                         <span class="text-slate-400">•</span>
-                                        <span>Reviewer: <span class="text-slate-900 dark:text-white font-medium">TOSEM</span></span>
+                                        <span>Reviewer: <span
+                                                class="text-slate-900 dark:text-white font-medium">TOSEM</span></span>
                                     </li>
                                     <li class="flex gap-2">
                                         <span class="text-slate-400">•</span>
-                                        <span>External Reviewer: <span class="text-slate-900 dark:text-white font-medium">ICSE '25, ISSRE '24</span></span>
+                                        <span>External Reviewer: <span
+                                                class="text-slate-900 dark:text-white font-medium">ICSE '25, ISSRE
+                                                '24</span></span>
                                     </li>
                                 </ul>
                             </div>
@@ -445,8 +548,9 @@ layout: null
                     </div>
                 </div>
             </section>
-            
-            <footer class="flex flex-col items-center gap-2 text-xs text-slate-400 dark:text-slate-600 py-8 border-t border-slate-200 dark:border-white/5">
+
+            <footer
+                class="flex flex-col items-center gap-2 text-xs text-slate-400 dark:text-slate-600 py-8 border-t border-slate-200 dark:border-white/5">
                 <p>&copy; 2025 Haowen Yang.</p>
             </footer>
 
@@ -459,7 +563,7 @@ layout: null
 
         const themeToggleBtn = document.getElementById('theme-toggle');
         const html = document.documentElement;
-        
+
         // Initialize Dark/Light Mode
         if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
             html.classList.add('dark');
@@ -520,9 +624,10 @@ layout: null
                     }, 800);
                 }
             }
-            
+
             typeWriter();
         });
     </script>
 </body>
+
 </html>

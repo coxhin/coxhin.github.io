@@ -6,9 +6,10 @@
 # `jekyll serve`. If you change this file, please restart the server process.
 
 # Site Settings
-title                    : "Haowen Yang"
+title                    : "Zhiqing Zhong"
+# TODO: add description
 description              : "<i>\"Life can only be understood backwards; but it must be lived forwards.\"</i>"
-repository               : "haowenyoung.github.io"
+repository               : "coxhin.github.io"
 google_scholar_stats_use_cdn : true
 
 # google analytics
@@ -21,14 +22,14 @@ baidu_site_verification  :  # get baidu_site_verification from https://ziyuan.ba
 
 # Site Author
 author:
-  name             : "Haowen Yang"
+  name             : "Zhiqing Zhong"
   avatar           : "images/profile_pic_new.png"
-  bio              : "Ph.D. student at HKUSTgz"
-  location         : "Guangzhou, China"
+  bio              : "Ph.D. candidate at CUHK-Shenzhen"
+  location         : "Shenzhen, China"
   employer         :
   pubmed           : 
-  googlescholar    : # "https://scholar.google.com/citations?user=e-zP90wAAAAJ&hl=en"
-  email            : "hyang464@connect.hkust-gz.edu.cn"
+  googlescholar    : "https://scholar.google.com/citations?user=EO7FS70AAAAJ"
+  email            : "zhiqingzhong@link.cuhk.edu.cn"
   researchgate     :  # e.g., "https://www.researchgate.net/profile/yourprofile"
   uri              :
   bitbucket        :
@@ -37,7 +38,7 @@ author:
   flickr           :
   facebook         :
   foursquare       :
-  github           : "haowenyoung"
+  github           : "coxhin"
   google_plus      :
   keybase          :
   instagram        :
